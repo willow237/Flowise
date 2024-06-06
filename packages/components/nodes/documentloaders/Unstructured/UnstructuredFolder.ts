@@ -27,7 +27,7 @@ class UnstructuredFolder_DocumentLoaders implements INode {
         this.version = 2.0
         this.type = 'Document'
         this.icon = 'unstructured-folder.svg'
-        this.category = 'Document Loaders'
+        this.category = '文档加载器'
         this.description =
             "Use Unstructured.io to load data from a folder. Note: Currently doesn't support .png and .heic until unstructured is updated."
         this.baseClasses = [this.type]

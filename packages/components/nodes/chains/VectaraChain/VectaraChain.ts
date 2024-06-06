@@ -48,167 +48,167 @@ class VectaraChain_Chains implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Vectara QA Chain'
+        this.label = 'Vectara QA 对话链'
         this.name = 'vectaraQAChain'
         this.version = 2.0
         this.type = 'VectaraQAChain'
         this.icon = 'vectara.png'
-        this.category = 'Chains'
-        this.description = 'QA chain for Vectara'
+        this.category = '对话链'
+        this.description = '用于 Vectara 的 QA 对话链'
         this.baseClasses = [this.type, ...getBaseClasses(VectorDBQAChain)]
         this.inputs = [
             {
-                label: 'Vectara Store',
+                label: 'Vectara 存储',
                 name: 'vectaraStore',
                 type: 'VectorStore'
             },
             {
-                label: 'Summarizer Prompt Name',
+                label: '摘要 Prompt 名称',
                 name: 'summarizerPromptName',
                 description:
-                    'Summarize the results fetched from Vectara. Read <a target="_blank" href="https://docs.vectara.com/docs/learn/grounded-generation/select-a-summarizer">more</a>',
+                    '总结从 Vectara 获取的结果。 请阅读<a target="_blank" href="https://docs.vectara.com/docs/learn/grounded-generation/select-a-summarizer">更多</a>',
                 type: 'options',
                 options: [
                     {
                         label: 'vectara-summary-ext-v1.2.0 (gpt-3.5-turbo)',
                         name: 'vectara-summary-ext-v1.2.0',
-                        description: 'base summarizer, available to all Vectara users'
+                        description: '所有 Vectara 用户均可使用的基础摘要器'
                     },
                     {
                         label: 'vectara-experimental-summary-ext-2023-10-23-small (gpt-3.5-turbo)',
                         name: 'vectara-experimental-summary-ext-2023-10-23-small',
-                        description: `In beta, available to both Growth and <a target="_blank" href="https://vectara.com/pricing/">Scale</a> Vectara users`
+                        description: `测试版，面向 Growth 和 <a target="_blank" href="https://vectara.com/pricing/">Scale</a> Vectara 用户开放`
                     },
                     {
                         label: 'vectara-summary-ext-v1.3.0 (gpt-4.0)',
                         name: 'vectara-summary-ext-v1.3.0',
-                        description: 'Only available to <a target="_blank" href="https://vectara.com/pricing/">Scale</a> Vectara users'
+                        description: '仅适用于 <a target="_blank" href="https://vectara.com/pricing/">Scale</a> Vectara 用户'
                     },
                     {
                         label: 'vectara-experimental-summary-ext-2023-10-23-med (gpt-4.0)',
                         name: 'vectara-experimental-summary-ext-2023-10-23-med',
-                        description: `In beta, only available to <a target="_blank" href="https://vectara.com/pricing/">Scale</a> Vectara users`
+                        description: `测试版，仅面向 <a target="_blank" href="https://vectara.com/pricing/">Scale</a> Vectara 用户开放`
                     }
                 ],
                 default: 'vectara-summary-ext-v1.2.0'
             },
             {
-                label: 'Response Language',
+                label: '响应语言',
                 name: 'responseLang',
                 description:
-                    'Return the response in specific language. If not selected, Vectara will automatically detects the language. Read <a target="_blank" href="https://docs.vectara.com/docs/learn/grounded-generation/grounded-generation-response-languages">more</a>',
+                    '以特定语言返回响应。如果未选择，Vectara 将自动检测语言。阅读<a target="_blank" href="https://docs.vectara.com/docs/learn/grounded-generation/grounded-generation-response-languages">更多</a>',
                 type: 'options',
                 options: [
                     {
-                        label: 'English',
+                        label: '英语',
                         name: 'eng'
                     },
                     {
-                        label: 'German',
+                        label: '德语',
                         name: 'deu'
                     },
                     {
-                        label: 'French',
+                        label: '法语',
                         name: 'fra'
                     },
                     {
-                        label: 'Chinese',
+                        label: '中文',
                         name: 'zho'
                     },
                     {
-                        label: 'Korean',
+                        label: '韩语',
                         name: 'kor'
                     },
                     {
-                        label: 'Arabic',
+                        label: '阿拉伯语',
                         name: 'ara'
                     },
                     {
-                        label: 'Russian',
+                        label: '俄语',
                         name: 'rus'
                     },
                     {
-                        label: 'Thai',
+                        label: '泰语',
                         name: 'tha'
                     },
                     {
-                        label: 'Dutch',
+                        label: '荷兰语',
                         name: 'nld'
                     },
                     {
-                        label: 'Italian',
+                        label: '意大利语',
                         name: 'ita'
                     },
                     {
-                        label: 'Portuguese',
+                        label: '葡萄牙语',
                         name: 'por'
                     },
                     {
-                        label: 'Spanish',
+                        label: '西班牙语',
                         name: 'spa'
                     },
                     {
-                        label: 'Japanese',
+                        label: '日语',
                         name: 'jpn'
                     },
                     {
-                        label: 'Polish',
+                        label: '波兰语',
                         name: 'pol'
                     },
                     {
-                        label: 'Turkish',
+                        label: '土耳其语',
                         name: 'tur'
                     },
                     {
-                        label: 'Vietnamese',
+                        label: '越南语',
                         name: 'vie'
                     },
                     {
-                        label: 'Indonesian',
+                        label: '印尼语',
                         name: 'ind'
                     },
                     {
-                        label: 'Czech',
+                        label: '捷克语',
                         name: 'ces'
                     },
                     {
-                        label: 'Ukrainian',
+                        label: '乌克兰语',
                         name: 'ukr'
                     },
                     {
-                        label: 'Greek',
+                        label: '希腊语',
                         name: 'ell'
                     },
                     {
-                        label: 'Hebrew',
+                        label: '希伯来语',
                         name: 'heb'
                     },
                     {
-                        label: 'Farsi/Persian',
+                        label: '波斯语',
                         name: 'fas'
                     },
                     {
-                        label: 'Hindi',
+                        label: '北印度语',
                         name: 'hin'
                     },
                     {
-                        label: 'Urdu',
+                        label: '乌尔都语',
                         name: 'urd'
                     },
                     {
-                        label: 'Swedish',
+                        label: '瑞典语',
                         name: 'swe'
                     },
                     {
-                        label: 'Bengali',
+                        label: '孟加拉语',
                         name: 'ben'
                     },
                     {
-                        label: 'Malay',
+                        label: '马来语',
                         name: 'msa'
                     },
                     {
-                        label: 'Romanian',
+                        label: '罗马尼亚语',
                         name: 'ron'
                     }
                 ],
@@ -216,15 +216,15 @@ class VectaraChain_Chains implements INode {
                 default: 'eng'
             },
             {
-                label: 'Max Summarized Results',
+                label: '最大汇总结果',
                 name: 'maxSummarizedResults',
-                description: 'Maximum results used to build the summarized response',
+                description: '用于建立汇总响应的最大结果',
                 type: 'number',
                 default: 7
             },
             {
-                label: 'Input Moderation',
-                description: 'Detect text that could generate harmful output and prevent it from being sent to the language model',
+                label: '输入调节',
+                description: '检测可能产生有害输出的文本，防止将其发送给语言模型',
                 name: 'inputModeration',
                 type: 'Moderation',
                 optional: true,

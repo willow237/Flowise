@@ -23,7 +23,7 @@ class HydeRetriever_Retrievers implements INode {
         this.version = 3.0
         this.type = 'HydeRetriever'
         this.icon = 'hyderetriever.svg'
-        this.category = 'Retrievers'
+        this.category = '检索器'
         this.description = 'Use HyDE retriever to retrieve from a vector store'
         this.baseClasses = [this.type, 'BaseRetriever']
         this.inputs = [

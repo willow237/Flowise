@@ -22,7 +22,7 @@ class GoogleGenerativeAIEmbedding_Embeddings implements INode {
         this.version = 2.0
         this.type = 'GoogleGenerativeAiEmbeddings'
         this.icon = 'GoogleGemini.svg'
-        this.category = 'Embeddings'
+        this.category = '嵌入'
         this.description = 'Google Generative API to generate embeddings for a given text'
         this.baseClasses = [this.type, ...getBaseClasses(GoogleGenerativeAIEmbeddings)]
         this.credential = {

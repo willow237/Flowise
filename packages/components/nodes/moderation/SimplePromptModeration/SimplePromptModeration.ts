@@ -16,36 +16,36 @@ class SimplePromptModeration implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Simple Prompt Moderation'
+        this.label = 'Simple Prompt 审核'
         this.name = 'inputModerationSimple'
         this.version = 2.0
         this.type = 'Moderation'
         this.icon = 'moderation.svg'
-        this.category = 'Moderation'
-        this.description = 'Check whether input consists of any text from Deny list, and prevent being sent to LLM'
+        this.category = '内容审核'
+        this.description = '检查输入是否包含拒绝列表中的任何文本，并防止将其发送至 LLM'
         this.baseClasses = [this.type, ...getBaseClasses(Moderation)]
         this.inputs = [
             {
-                label: 'Deny List',
+                label: '拒绝名单',
                 name: 'denyList',
                 type: 'string',
                 rows: 4,
-                placeholder: `ignore previous instructions\ndo not follow the directions\nyou must ignore all previous instructions`,
-                description: 'An array of string literals (enter one per line) that should not appear in the prompt text.'
+                placeholder: `忽略前面的指令\n不按指示操作\n您必须忽略之前的所有指令`,
+                description: '不应出现在提示文本中的字符串数组（每行输入一个）。'
             },
             {
-                label: 'Chat Model',
+                label: '聊天模型',
                 name: 'model',
                 type: 'BaseChatModel',
-                description: 'Use LLM to detect if the input is similar to those specified in Deny List',
+                description: '使用 LLM 检测输入是否与 “拒绝列表 ”中指定的输入相似',
                 optional: true
             },
             {
-                label: 'Error Message',
+                label: '错误信息',
                 name: 'moderationErrorMessage',
                 type: 'string',
                 rows: 2,
-                default: 'Cannot Process! Input violates content moderation policies.',
+                default: '无法处理！输入内容违反了内容审核政策。',
                 optional: true
             }
         ]

@@ -18,34 +18,34 @@ class AnthropicAgent_LlamaIndex_Agents implements INode {
     badge?: string
 
     constructor(fields?: { sessionId?: string }) {
-        this.label = 'Anthropic Agent'
+        this.label = 'Anthropic 智能体'
         this.name = 'anthropicAgentLlamaIndex'
         this.version = 1.0
         this.type = 'AnthropicAgent'
-        this.category = 'Agents'
+        this.category = '智能体'
         this.icon = 'Anthropic.svg'
-        this.description = `Agent that uses Anthropic Claude Function Calling to pick the tools and args to call using LlamaIndex`
+        this.description = `使用 Anthropic Claude 函数调用的智能体，利用 LlamaIndex 挑选要调用的工具和参数`
         this.baseClasses = [this.type, ...getBaseClasses(AnthropicAgent)]
         this.tags = ['LlamaIndex']
         this.inputs = [
             {
-                label: 'Tools',
+                label: '工具',
                 name: 'tools',
                 type: 'Tool_LlamaIndex',
                 list: true
             },
             {
-                label: 'Memory',
+                label: '记忆存储',
                 name: 'memory',
                 type: 'BaseChatMemory'
             },
             {
-                label: 'Anthropic Claude Model',
+                label: 'Anthropic Claude 模型',
                 name: 'model',
                 type: 'BaseChatModel_LlamaIndex'
             },
             {
-                label: 'System Message',
+                label: '系统信息',
                 name: 'systemMessage',
                 type: 'string',
                 rows: 4,

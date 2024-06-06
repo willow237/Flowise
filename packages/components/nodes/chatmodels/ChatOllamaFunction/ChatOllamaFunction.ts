@@ -37,18 +37,18 @@ class ChatOllamaFunction_ChatModels implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'ChatOllama Function'
+        this.label = 'ChatOllama 函数'
         this.name = 'chatOllamaFunction'
         this.version = 1.0
         this.type = 'ChatOllamaFunction'
         this.icon = 'Ollama.svg'
-        this.category = 'Chat Models'
-        this.description = 'Run open-source function-calling compatible LLM on Ollama'
+        this.category = '聊天模型'
+        this.description = '在 Ollama 上运行开源函数调用兼容的 LLM'
         this.baseClasses = [this.type, ...getBaseClasses(OllamaFunctions)]
         this.badge = 'NEW'
         this.inputs = [
             {
-                label: 'Cache',
+                label: '缓存',
                 name: 'cache',
                 type: 'BaseCache',
                 optional: true
@@ -60,29 +60,29 @@ class ChatOllamaFunction_ChatModels implements INode {
                 default: 'http://localhost:11434'
             },
             {
-                label: 'Model Name',
+                label: '模型名称',
                 name: 'modelName',
                 type: 'string',
-                description: 'Only compatible with function calling model like mistral',
+                description: '仅与类似 mistral 的函数调用模型兼容',
                 placeholder: 'mistral'
             },
             {
-                label: 'Temperature',
+                label: '温度',
                 name: 'temperature',
                 type: 'number',
                 description:
-                    'The temperature of the model. Increasing the temperature will make the model answer more creatively. (Default: 0.8). Refer to <a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">docs</a> for more details',
+                    '模型的温度 。提高温度会使模型的回答更有创造性。(默认值:0.8)。更多细节请参考 <a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">文档</a>',
                 step: 0.1,
                 default: 0.9,
                 optional: true
             },
             {
-                label: 'Tool System Prompt',
+                label: '工具系统提示',
                 name: 'toolSystemPromptTemplate',
                 type: 'string',
                 rows: 4,
-                description: `Under the hood, Ollama's JSON mode is being used to constrain output to JSON. Output JSON will contains two keys: tool and tool_input fields. We then parse it to execute the tool. Because different models have different strengths, it may be helpful to pass in your own system prompt.`,
-                warning: `Prompt must always contains {tools} and instructions to respond with a JSON object with tool and tool_input fields`,
+                description: `在底层实现中，Ollama 的 JSON 模式用于将输出限制为 JSON 格式。输出的 JSON 将包含两个键：tool 和 tool_input 字段。然后我们解析该 JSON 并执行工具。由于不同的模型具有不同的优势，因此可能有必要传递自己的系统提示。`,
+                warning: `提示必须始终包含工具名称和指令，以便能够响应一个带有工具名称和工具输入字段的JSON对象。`,
                 default: DEFAULT_TOOL_SYSTEM_TEMPLATE,
                 placeholder: DEFAULT_TOOL_SYSTEM_TEMPLATE,
                 additionalParams: true,
@@ -93,7 +93,7 @@ class ChatOllamaFunction_ChatModels implements INode {
                 name: 'topP',
                 type: 'number',
                 description:
-                    'Works together with top-k. A higher value (e.g., 0.95) will lead to more diverse text, while a lower value (e.g., 0.5) will generate more focused and conservative text. (Default: 0.9). Refer to <a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">docs</a> for more details',
+                    '它与 top-k 一起使用。更高的值（例如 0.95）将导致生成更多样化的文本，而更低的值（例如 0.5）将生成更专注于保守的文本。（默认值：0.9）。有关更多详细信息，请参阅<a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">文档</a>',
                 step: 0.1,
                 optional: true,
                 additionalParams: true
@@ -103,7 +103,7 @@ class ChatOllamaFunction_ChatModels implements INode {
                 name: 'topK',
                 type: 'number',
                 description:
-                    'Reduces the probability of generating nonsense. A higher value (e.g. 100) will give more diverse answers, while a lower value (e.g. 10) will be more conservative. (Default: 40). Refer to <a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">docs</a> for more details',
+                    '减少产生无意义内容的概率。较高的值(如100)将给出更多样化的答案，而较低的值(如10)将更保守。(默认值:40) 有关更多详细信息，请参阅<a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">文档</a>',
                 step: 1,
                 optional: true,
                 additionalParams: true
@@ -113,7 +113,7 @@ class ChatOllamaFunction_ChatModels implements INode {
                 name: 'mirostat',
                 type: 'number',
                 description:
-                    'Enable Mirostat sampling for controlling perplexity. (default: 0, 0 = disabled, 1 = Mirostat, 2 = Mirostat 2.0). Refer to <a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">docs</a> for more details',
+                    '启用 Mirostat 采样以控制困惑度。(默认值:0,0 = disabled, 1 = Mirostat, 2 = Mirostat 2.0)。有关更多详细信息，请参阅<a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">文档</a>',
                 step: 1,
                 optional: true,
                 additionalParams: true
@@ -123,7 +123,7 @@ class ChatOllamaFunction_ChatModels implements INode {
                 name: 'mirostatEta',
                 type: 'number',
                 description:
-                    'Influences how quickly the algorithm responds to feedback from the generated text. A lower learning rate will result in slower adjustments, while a higher learning rate will make the algorithm more responsive. (Default: 0.1) Refer to <a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">docs</a> for more details',
+                    '影响算法对生成文本的反馈的响应速度。较低的学习率将导致较慢的调整，而较高的学习率将使算法更具响应性。(默认:0.1) 有关更多详细信息，请参阅<a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">文档</a>',
                 step: 0.1,
                 optional: true,
                 additionalParams: true
@@ -133,88 +133,88 @@ class ChatOllamaFunction_ChatModels implements INode {
                 name: 'mirostatTau',
                 type: 'number',
                 description:
-                    'Controls the balance between coherence and diversity of the output. A lower value will result in more focused and coherent text. (Default: 5.0) Refer to <a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">docs</a> for more details',
+                    '控制输出的一致性和多样性之间的平衡。值越低，文本越集中、越连贯。(默认:5.0) 有关更多详细信息，请参阅<a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">文档</a>',
                 step: 0.1,
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Context Window Size',
+                label: '上下文窗口大小',
                 name: 'numCtx',
                 type: 'number',
                 description:
-                    'Sets the size of the context window used to generate the next token. (Default: 2048) Refer to <a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">docs</a> for more details',
+                    '设置用于生成下一个标记的上下文窗口的大小。(默认值:2048) 有关更多详细信息，请参阅<a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">文档</a>',
                 step: 1,
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Number of GQA groups',
+                label: 'GQA 组的数量',
                 name: 'numGqa',
                 type: 'number',
                 description:
-                    'The number of GQA groups in the transformer layer. Required for some models, for example it is 8 for llama2:70b. Refer to <a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">docs</a> for more details',
+                    'transformer 层中 GQA 组的数量。对于某些型号是必需的，例如llama2:70b是8。有关更多详细信息，请参阅<a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">文档</a>',
                 step: 1,
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Number of GPU',
+                label: 'GPU 数量',
                 name: 'numGpu',
                 type: 'number',
                 description:
-                    'The number of layers to send to the GPU(s). On macOS it defaults to 1 to enable metal support, 0 to disable. Refer to <a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">docs</a> for more details',
+                    '要发送到GPU的层数。在macOS上，默认值为1表示启用metal支持，0表示禁用。有关更多详细信息，请参阅<a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">文档</a>',
                 step: 1,
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Number of Thread',
+                label: '线程数',
                 name: 'numThread',
                 type: 'number',
                 description:
-                    'Sets the number of threads to use during computation. By default, Ollama will detect this for optimal performance. It is recommended to set this value to the number of physical CPU cores your system has (as opposed to the logical number of cores). Refer to <a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">docs</a> for more details',
+                    '设置计算期间使用的线程数。默认情况下，Ollama将检测此参数以获得最佳性能。建议将此值设置为系统拥有的物理CPU内核数量(而不是逻辑内核数量)。有关更多详细信息，请参阅<a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">文档</a>',
                 step: 1,
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Repeat Last N',
+                label: '重复最后 N 个',
                 name: 'repeatLastN',
                 type: 'number',
                 description:
-                    'Sets how far back for the model to look back to prevent repetition. (Default: 64, 0 = disabled, -1 = num_ctx). Refer to <a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">docs</a> for more details',
+                    '设置模型向后看的距离，以防止重复。(默认值:64,0 = disabled， -1 = num_ctx)。有关更多详细信息，请参阅<a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">文档</a>',
                 step: 1,
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Repeat Penalty',
+                label: '惩罚重复',
                 name: 'repeatPenalty',
                 type: 'number',
                 description:
-                    'Sets how strongly to penalize repetitions. A higher value (e.g., 1.5) will penalize repetitions more strongly, while a lower value (e.g., 0.9) will be more lenient. (Default: 1.1). Refer to <a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">docs</a> for more details',
+                    '设定惩罚重复的力度。较高的值(如1.5)会更严厉地惩罚重复，而较低的值(如0.9)会更宽松。(默认值:1.1)。有关更多详细信息，请参阅<a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">文档</a>',
                 step: 0.1,
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Stop Sequence',
+                label: '停止序列',
                 name: 'stop',
                 type: 'string',
                 rows: 4,
                 placeholder: 'AI assistant:',
                 description:
-                    'Sets the stop sequences to use. Use comma to seperate different sequences. Refer to <a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">docs</a> for more details',
+                    '设置要使用的停止序列。使用逗号分隔不同的序列。 有关更多详细信息，请参阅<a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">文档</a>',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Tail Free Sampling',
+                label: '无尾采样',
                 name: 'tfsZ',
                 type: 'number',
                 description:
-                    'Tail free sampling is used to reduce the impact of less probable tokens from the output. A higher value (e.g., 2.0) will reduce the impact more, while a value of 1.0 disables this setting. (Default: 1). Refer to <a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">docs</a> for more details',
+                    '无尾采样用于减少输出中不太可能的标记的影响。较高的值(例如2.0)会更少影响，而1.0则禁用此设置。(默认:1)。有关更多详细信息，请参阅<a target="_blank" href="https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values">文档</a>',
                 step: 0.1,
                 optional: true,
                 additionalParams: true

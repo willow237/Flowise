@@ -20,7 +20,7 @@ class HtmlToMarkdownTextSplitter_TextSplitters implements INode {
         this.version = 1.0
         this.type = 'HtmlToMarkdownTextSplitter'
         this.icon = 'htmlToMarkdownTextSplitter.svg'
-        this.category = 'Text Splitters'
+        this.category = '文本分割器'
         this.description = `Converts Html to Markdown and then split your content into documents based on the Markdown headers`
         this.baseClasses = [this.type, ...getBaseClasses(HtmlToMarkdownTextSplitter)]
         this.inputs = [

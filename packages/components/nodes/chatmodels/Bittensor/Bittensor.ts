@@ -20,7 +20,7 @@ class Bittensor_ChatModels implements INode {
         this.version = 2.0
         this.type = 'BittensorChat'
         this.icon = 'NIBittensor.svg'
-        this.category = 'Chat Models'
+        this.category = '聊天模型'
         this.description = 'Wrapper around Bittensor subnet 1 large language models'
         this.baseClasses = [this.type, ...getBaseClasses(NIBittensorChatModel)]
         this.inputs = [

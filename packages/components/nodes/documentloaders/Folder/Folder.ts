@@ -25,7 +25,7 @@ class Folder_DocumentLoaders implements INode {
         this.version = 2.0
         this.type = 'Document'
         this.icon = 'folder.svg'
-        this.category = 'Document Loaders'
+        this.category = '文档加载器'
         this.description = `Load data from folder with multiple files`
         this.baseClasses = [this.type]
         this.inputs = [

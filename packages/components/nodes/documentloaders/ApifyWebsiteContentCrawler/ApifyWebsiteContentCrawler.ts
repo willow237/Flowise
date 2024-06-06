@@ -23,7 +23,7 @@ class ApifyWebsiteContentCrawler_DocumentLoaders implements INode {
         this.type = 'Document'
         this.icon = 'apify-symbol-transparent.svg'
         this.version = 2.0
-        this.category = 'Document Loaders'
+        this.category = '文档加载器'
         this.description = 'Load data from Apify Website Content Crawler'
         this.baseClasses = [this.type]
         this.inputs = [

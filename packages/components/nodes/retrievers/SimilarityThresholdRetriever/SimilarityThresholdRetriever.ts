@@ -21,7 +21,7 @@ class SimilarityThresholdRetriever_Retrievers implements INode {
         this.version = 2.0
         this.type = 'SimilarityThresholdRetriever'
         this.icon = 'similaritythreshold.svg'
-        this.category = 'Retrievers'
+        this.category = '检索器'
         this.description = 'Return results based on the minimum similarity percentage'
         this.baseClasses = [this.type, 'BaseRetriever']
         this.inputs = [

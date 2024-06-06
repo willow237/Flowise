@@ -29,7 +29,7 @@ class QdrantUpsert_VectorStores implements INode {
         this.version = 3.0
         this.type = 'Qdrant'
         this.icon = 'qdrant.png'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.description = 'Upsert documents to Qdrant'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.badge = 'DEPRECATING'

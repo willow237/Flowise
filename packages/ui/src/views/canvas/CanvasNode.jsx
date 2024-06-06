@@ -201,7 +201,7 @@ const CanvasNode = ({ data }) => {
                                             textAlign: 'center'
                                         }}
                                     >
-                                        Inputs
+                                        输入
                                     </Typography>
                                 </Box>
                                 <Divider />
@@ -227,7 +227,7 @@ const CanvasNode = ({ data }) => {
                                 }}
                             >
                                 <Button sx={{ borderRadius: 25, width: '90%', mb: 2 }} variant='outlined' onClick={onDialogClicked}>
-                                    Additional Parameters
+                                    附加参数
                                 </Button>
                             </div>
                         )}
@@ -239,7 +239,7 @@ const CanvasNode = ({ data }) => {
                                     textAlign: 'center'
                                 }}
                             >
-                                Output
+                                输出
                             </Typography>
                         </Box>
                         <Divider />

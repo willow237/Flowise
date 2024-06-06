@@ -17,23 +17,23 @@ class API_DocumentLoaders implements INode {
     inputs?: INodeParams[]
 
     constructor() {
-        this.label = 'API Loader'
+        this.label = 'API 加载器'
         this.name = 'apiLoader'
         this.version = 1.0
         this.type = 'Document'
         this.icon = 'api.svg'
-        this.category = 'Document Loaders'
-        this.description = `Load data from an API`
+        this.category = '文档加载器'
+        this.description = `从 API 加载数据`
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Text Splitter',
+                label: '文本分割器',
                 name: 'textSplitter',
                 type: 'TextSplitter',
                 optional: true
             },
             {
-                label: 'Method',
+                label: '方法',
                 name: 'method',
                 type: 'options',
                 options: [
@@ -63,26 +63,25 @@ class API_DocumentLoaders implements INode {
                 label: 'Body',
                 name: 'body',
                 type: 'json',
-                description:
-                    'JSON body for the POST request. If not specified, agent will try to figure out itself from AIPlugin if provided',
+                description: 'POST 请求的 JSON 主体。如果未指定，代理将尝试从 AIPlugin（如果提供）中自行查找。',
                 additionalParams: true,
                 optional: true
             },
             {
-                label: 'Additional Metadata',
+                label: '附加元数据',
                 name: 'metadata',
                 type: 'json',
-                description: 'Additional metadata to be added to the extracted documents',
+                description: '在提取的文件中添加附加元数据',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Omit Metadata Keys',
+                label: '省略元数据键',
                 name: 'omitMetadataKeys',
                 type: 'string',
                 rows: 4,
                 description:
-                    'Each document loader comes with a default set of metadata keys that are extracted from the document. You can use this field to omit some of the default metadata keys. The value should be a list of keys, seperated by comma. Use * to omit all metadata keys execept the ones you specify in the Additional Metadata field',
+                    '每个文档加载器都有一组从文档中提取的默认元数据键。您可以使用此字段省略某些默认元数据键。值应该是一个键的列表，用逗号分隔。使用 * 可省略所有元数据关键字，但在附加元数据字段中指定的关键字除外',
                 placeholder: 'key1, key2, key3.nestedKey1',
                 optional: true,
                 additionalParams: true

@@ -19,28 +19,28 @@ class VectorDBQAChain_Chains implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'VectorDB QA Chain'
+        this.label = 'VectorDB QA 对话链'
         this.name = 'vectorDBQAChain'
         this.version = 2.0
         this.type = 'VectorDBQAChain'
         this.icon = 'vectordb.svg'
-        this.category = 'Chains'
-        this.description = 'QA chain for vector databases'
+        this.category = '对话链'
+        this.description = '向量数据库的 QA 对话链'
         this.baseClasses = [this.type, ...getBaseClasses(VectorDBQAChain)]
         this.inputs = [
             {
-                label: 'Language Model',
+                label: '语言模型',
                 name: 'model',
                 type: 'BaseLanguageModel'
             },
             {
-                label: 'Vector Store',
+                label: '向量存储',
                 name: 'vectorStore',
                 type: 'VectorStore'
             },
             {
-                label: 'Input Moderation',
-                description: 'Detect text that could generate harmful output and prevent it from being sent to the language model',
+                label: '输入调节',
+                description: '检测可能产生有害输出的文本，防止将其发送给语言模型',
                 name: 'inputModeration',
                 type: 'Moderation',
                 optional: true,

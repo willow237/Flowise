@@ -26,7 +26,7 @@ class RRFRetriever_Retrievers implements INode {
         this.type = 'RRFRetriever'
         this.badge = 'NEW'
         this.icon = 'rrfRetriever.svg'
-        this.category = 'Retrievers'
+        this.category = '检索器'
         this.description = 'Reciprocal Rank Fusion to re-rank search results by multiple query generation.'
         this.baseClasses = [this.type, 'BaseRetriever']
         this.inputs = [

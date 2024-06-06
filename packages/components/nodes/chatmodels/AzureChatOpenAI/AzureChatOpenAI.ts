@@ -19,13 +19,13 @@ class AzureChatOpenAI_ChatModels implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Azure ChatOpenAI'
+        this.label = 'Azure 聊天OpenAI'
         this.name = 'azureChatOpenAI'
         this.version = 4.0
         this.type = 'AzureChatOpenAI'
         this.icon = 'Azure.svg'
-        this.category = 'Chat Models'
-        this.description = 'Wrapper around Azure OpenAI large language models that use the Chat endpoint'
+        this.category = '聊天模型'
+        this.description = '使用聊天端点的 Azure OpenAI 大型语言模型包装器'
         this.baseClasses = [this.type, ...getBaseClasses(LangchainChatOpenAI)]
         this.credential = {
             label: 'Connect Credential',
@@ -35,19 +35,19 @@ class AzureChatOpenAI_ChatModels implements INode {
         }
         this.inputs = [
             {
-                label: 'Cache',
+                label: '缓存',
                 name: 'cache',
                 type: 'BaseCache',
                 optional: true
             },
             {
-                label: 'Model Name',
+                label: '模型名称',
                 name: 'modelName',
                 type: 'asyncOptions',
                 loadMethod: 'listModels'
             },
             {
-                label: 'Temperature',
+                label: '温度',
                 name: 'temperature',
                 type: 'number',
                 step: 0.1,
@@ -55,7 +55,7 @@ class AzureChatOpenAI_ChatModels implements INode {
                 optional: true
             },
             {
-                label: 'Max Tokens',
+                label: '最大令牌数',
                 name: 'maxTokens',
                 type: 'number',
                 step: 1,
@@ -63,7 +63,7 @@ class AzureChatOpenAI_ChatModels implements INode {
                 additionalParams: true
             },
             {
-                label: 'Top Probability',
+                label: '最高概率',
                 name: 'topP',
                 type: 'number',
                 step: 0.1,
@@ -71,7 +71,7 @@ class AzureChatOpenAI_ChatModels implements INode {
                 additionalParams: true
             },
             {
-                label: 'Frequency Penalty',
+                label: '频率处罚',
                 name: 'frequencyPenalty',
                 type: 'number',
                 step: 0.1,
@@ -79,7 +79,7 @@ class AzureChatOpenAI_ChatModels implements INode {
                 additionalParams: true
             },
             {
-                label: 'Presence Penalty',
+                label: '出席处罚',
                 name: 'presencePenalty',
                 type: 'number',
                 step: 0.1,
@@ -87,7 +87,7 @@ class AzureChatOpenAI_ChatModels implements INode {
                 additionalParams: true
             },
             {
-                label: 'Timeout',
+                label: '超时',
                 name: 'timeout',
                 type: 'number',
                 step: 1,
@@ -95,30 +95,30 @@ class AzureChatOpenAI_ChatModels implements INode {
                 additionalParams: true
             },
             {
-                label: 'Allow Image Uploads',
+                label: '允许上传图片',
                 name: 'allowImageUploads',
                 type: 'boolean',
                 description:
-                    'Automatically uses gpt-4-vision-preview when image is being uploaded from chat. Only works with LLMChain, Conversation Chain, ReAct Agent, and Conversational Agent',
+                    '当从聊天上传图像时，自动使用 gpt-4-vision-preview 功能。仅适用于 LLMChain、Conversation Chain、ReAct Agent 和 Conversational Agent',
                 default: false,
                 optional: true
             },
             {
-                label: 'Image Resolution',
-                description: 'This parameter controls the resolution in which the model views the image.',
+                label: '图像分辨率',
+                description: '该参数控制模型查看图像的分辨率。',
                 name: 'imageResolution',
                 type: 'options',
                 options: [
                     {
-                        label: 'Low',
+                        label: '低',
                         name: 'low'
                     },
                     {
-                        label: 'High',
+                        label: '高',
                         name: 'high'
                     },
                     {
-                        label: 'Auto',
+                        label: '自动',
                         name: 'auto'
                     }
                 ],

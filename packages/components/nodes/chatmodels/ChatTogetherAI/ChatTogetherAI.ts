@@ -21,7 +21,7 @@ class ChatTogetherAI_ChatModels implements INode {
         this.version = 1.0
         this.type = 'ChatTogetherAI'
         this.icon = 'togetherai.png'
-        this.category = 'Chat Models'
+        this.category = '聊天模型'
         this.description = 'Wrapper around TogetherAI large language models'
         this.baseClasses = [this.type, ...getBaseClasses(ChatTogetherAI)]
         this.credential = {

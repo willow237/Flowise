@@ -25,17 +25,17 @@ class LLMChain_Chains implements INode {
     outputParser: BaseOutputParser
 
     constructor() {
-        this.label = 'LLM Chain'
+        this.label = 'LLM 对话链'
         this.name = 'llmChain'
         this.version = 3.0
         this.type = 'LLMChain'
         this.icon = 'LLM_Chain.svg'
-        this.category = 'Chains'
-        this.description = 'Chain to run queries against LLMs'
+        this.category = '对话链'
+        this.description = '针对 LLM 运行查询的链'
         this.baseClasses = [this.type, ...getBaseClasses(LLMChain)]
         this.inputs = [
             {
-                label: 'Language Model',
+                label: '语言模型',
                 name: 'model',
                 type: 'BaseLanguageModel'
             },
@@ -45,35 +45,35 @@ class LLMChain_Chains implements INode {
                 type: 'BasePromptTemplate'
             },
             {
-                label: 'Output Parser',
+                label: '输出解析器',
                 name: 'outputParser',
                 type: 'BaseLLMOutputParser',
                 optional: true
             },
             {
-                label: 'Input Moderation',
-                description: 'Detect text that could generate harmful output and prevent it from being sent to the language model',
+                label: '输入调节',
+                description: '检测可能产生有害输出的文本，防止将其发送给语言模型',
                 name: 'inputModeration',
                 type: 'Moderation',
                 optional: true,
                 list: true
             },
             {
-                label: 'Chain Name',
+                label: '对话链名',
                 name: 'chainName',
                 type: 'string',
-                placeholder: 'Name Your Chain',
+                placeholder: '为您的对话链命名',
                 optional: true
             }
         ]
         this.outputs = [
             {
-                label: 'LLM Chain',
+                label: 'LLM 对话链',
                 name: 'llmChain',
                 baseClasses: [this.type, ...getBaseClasses(LLMChain)]
             },
             {
-                label: 'Output Prediction',
+                label: '输出预测',
                 name: 'outputPrediction',
                 baseClasses: ['string', 'json']
             }

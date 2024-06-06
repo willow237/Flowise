@@ -24,25 +24,25 @@ class Faiss_VectorStores implements INode {
         this.version = 1.0
         this.type = 'Faiss'
         this.icon = 'faiss.svg'
-        this.category = 'Vector Stores'
-        this.description = 'Upsert embedded data and perform similarity search upon query using Faiss library from Meta'
+        this.category = '向量存储器'
+        this.description = '使用 Meta 的 Faiss 库上插嵌入式数据并在查询时执行相似性搜索'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.badge = 'NEW'
         this.inputs = [
             {
-                label: 'Document',
+                label: '文档',
                 name: 'document',
                 type: 'Document',
                 list: true,
                 optional: true
             },
             {
-                label: 'Embeddings',
+                label: '嵌入',
                 name: 'embeddings',
                 type: 'Embeddings'
             },
             {
-                label: 'Base Path to load',
+                label: '加载的基本路径',
                 name: 'basePath',
                 description: 'Path to load faiss.index file',
                 placeholder: `C:\\Users\\User\\Desktop`,
@@ -51,7 +51,7 @@ class Faiss_VectorStores implements INode {
             {
                 label: 'Top K',
                 name: 'topK',
-                description: 'Number of top results to fetch. Default to 4',
+                description: '要获取的最高结果数。默认为 4',
                 placeholder: '4',
                 type: 'number',
                 additionalParams: true,
@@ -60,12 +60,12 @@ class Faiss_VectorStores implements INode {
         ]
         this.outputs = [
             {
-                label: 'Faiss Retriever',
+                label: 'Faiss 检索器',
                 name: 'retriever',
                 baseClasses: this.baseClasses
             },
             {
-                label: 'Faiss Vector Store',
+                label: 'Faiss 向量存储器',
                 name: 'vectorStore',
                 baseClasses: [this.type, ...getBaseClasses(FaissStore)]
             }

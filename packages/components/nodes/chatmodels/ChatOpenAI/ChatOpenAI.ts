@@ -25,7 +25,7 @@ class ChatOpenAI_ChatModels implements INode {
         this.version = 6.0
         this.type = 'ChatOpenAI'
         this.icon = 'openai.svg'
-        this.category = 'Chat Models'
+        this.category = '聊天模型'
         this.description = 'Wrapper around OpenAI large language models that use the Chat endpoint'
         this.baseClasses = [this.type, ...getBaseClasses(LangchainChatOpenAI)]
         this.credential = {

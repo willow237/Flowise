@@ -19,7 +19,7 @@ class QueryEngine_Tools implements INode {
         this.version = 2.0
         this.type = 'QueryEngineTool'
         this.icon = 'queryEngineTool.svg'
-        this.category = 'Tools'
+        this.category = '工具'
         this.tags = ['LlamaIndex']
         this.description = 'Tool used to invoke query engine'
         this.baseClasses = [this.type, 'Tool_LlamaIndex']

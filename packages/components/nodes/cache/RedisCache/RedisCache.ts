@@ -61,7 +61,7 @@ class RedisCache implements INode {
         this.type = 'RedisCache'
         this.description = 'Cache LLM response in Redis, useful for sharing cache across multiple processes or servers'
         this.icon = 'redis.svg'
-        this.category = 'Cache'
+        this.category = '缓存'
         this.baseClasses = [this.type, ...getBaseClasses(LangchainRedisCache)]
         this.credential = {
             label: 'Connect Credential',

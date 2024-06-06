@@ -18,7 +18,7 @@ class SetVariable_Utilities implements INode {
         this.version = 1.0
         this.type = 'SetVariable'
         this.icon = 'setvar.svg'
-        this.category = 'Utilities'
+        this.category = '实用工具'
         this.description = `Set variable which can be retrieved at a later stage. Variable is only available during runtime.`
         this.baseClasses = [this.type, 'Utilities']
         this.inputs = [

@@ -29,34 +29,34 @@ class ConversationalRetrievalAgent_Agents implements INode {
     sessionId?: string
 
     constructor(fields?: { sessionId?: string }) {
-        this.label = 'Conversational Retrieval Agent'
+        this.label = '对话检索智能体'
         this.name = 'conversationalRetrievalAgent'
         this.version = 4.0
         this.type = 'AgentExecutor'
-        this.category = 'Agents'
+        this.category = '智能体'
         this.badge = 'DEPRECATING'
         this.icon = 'agent.svg'
-        this.description = `An agent optimized for retrieval during conversation, answering questions based on past dialogue, all using OpenAI's Function Calling`
+        this.description = `在对话过程中对检索进行优化的智能体，可根据过去的对话回答问题，全部使用 OpenAI 的功能调用`
         this.baseClasses = [this.type, ...getBaseClasses(AgentExecutor)]
         this.inputs = [
             {
-                label: 'Allowed Tools',
+                label: '允许的工具',
                 name: 'tools',
                 type: 'Tool',
                 list: true
             },
             {
-                label: 'Memory',
+                label: '记忆存储',
                 name: 'memory',
                 type: 'BaseChatMemory'
             },
             {
-                label: 'OpenAI/Azure Chat Model',
+                label: 'OpenAI/Azure 聊天模型',
                 name: 'model',
                 type: 'BaseChatModel'
             },
             {
-                label: 'System Message',
+                label: '系统信息',
                 name: 'systemMessage',
                 type: 'string',
                 default: defaultMessage,
@@ -65,15 +65,15 @@ class ConversationalRetrievalAgent_Agents implements INode {
                 additionalParams: true
             },
             {
-                label: 'Input Moderation',
-                description: 'Detect text that could generate harmful output and prevent it from being sent to the language model',
+                label: '输入调节',
+                description: '检测可能生成有害输出的文本并阻止其发送到语言模型',
                 name: 'inputModeration',
                 type: 'Moderation',
                 optional: true,
                 list: true
             },
             {
-                label: 'Max Iterations',
+                label: '最大迭代次数',
                 name: 'maxIterations',
                 type: 'number',
                 optional: true,

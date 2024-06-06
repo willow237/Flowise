@@ -21,30 +21,30 @@ class BabyAGI_Agents implements INode {
         this.name = 'babyAGI'
         this.version = 2.0
         this.type = 'BabyAGI'
-        this.category = 'Agents'
+        this.category = '智能体'
         this.icon = 'babyagi.svg'
-        this.description = 'Task Driven Autonomous Agent which creates new task and reprioritizes task list based on objective'
+        this.description = '任务驱动型自主智能体，可根据目标创建新任务并调整任务列表的优先次序'
         this.baseClasses = ['BabyAGI']
         this.inputs = [
             {
-                label: 'Chat Model',
+                label: '聊天模型',
                 name: 'model',
                 type: 'BaseChatModel'
             },
             {
-                label: 'Vector Store',
+                label: '向量存储',
                 name: 'vectorStore',
                 type: 'VectorStore'
             },
             {
-                label: 'Task Loop',
+                label: '任务循环',
                 name: 'taskLoop',
                 type: 'number',
                 default: 3
             },
             {
-                label: 'Input Moderation',
-                description: 'Detect text that could generate harmful output and prevent it from being sent to the language model',
+                label: '输入调节',
+                description: '检测可能生成有害输出的文本并阻止其发送到语言模型',
                 name: 'inputModeration',
                 type: 'Moderation',
                 optional: true,

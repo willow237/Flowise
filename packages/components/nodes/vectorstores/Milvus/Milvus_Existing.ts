@@ -25,7 +25,7 @@ class Milvus_Existing_VectorStores implements INode {
         this.version = 2.0
         this.type = 'Milvus'
         this.icon = 'milvus.svg'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.description = 'Load existing collection from Milvus (i.e: Document has been upserted)'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.badge = 'DEPRECATING'

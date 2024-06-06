@@ -17,7 +17,7 @@ class StickyNote implements INode {
         this.version = 1.0
         this.type = 'StickyNote'
         this.icon = 'stickyNote.svg'
-        this.category = 'Utilities'
+        this.category = '实用工具'
         this.description = 'Add a sticky note'
         this.inputs = [
             {

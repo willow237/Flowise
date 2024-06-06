@@ -4,7 +4,7 @@ import { BaseLanguageModel, BaseLanguageModelCallOptions } from '@langchain/core
 import { LLMChain } from 'langchain/chains'
 import { ICommonObject } from '../../src'
 
-export const CATEGORY = 'Output Parsers'
+export const CATEGORY = '输出解析器'
 
 export const formatResponse = (response: string | object): string | object => {
     if (typeof response === 'object') {

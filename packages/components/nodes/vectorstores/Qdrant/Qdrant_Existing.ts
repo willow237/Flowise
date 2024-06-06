@@ -27,7 +27,7 @@ class Qdrant_Existing_VectorStores implements INode {
         this.version = 2.0
         this.type = 'Qdrant'
         this.icon = 'qdrant.png'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.description = 'Load existing index from Qdrant (i.e., documents have been upserted)'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.badge = 'DEPRECATING'

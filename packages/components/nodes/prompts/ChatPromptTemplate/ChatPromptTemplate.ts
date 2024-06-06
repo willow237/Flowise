@@ -14,31 +14,31 @@ class ChatPromptTemplate_Prompts implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Chat Prompt Template'
+        this.label = '聊天提示模板'
         this.name = 'chatPromptTemplate'
         this.version = 1.0
         this.type = 'ChatPromptTemplate'
         this.icon = 'prompt.svg'
-        this.category = 'Prompts'
-        this.description = 'Schema to represent a chat prompt'
+        this.category = '提示词'
+        this.description = '聊天提示模式'
         this.baseClasses = [this.type, ...getBaseClasses(ChatPromptTemplate)]
         this.inputs = [
             {
-                label: 'System Message',
+                label: '系统信息',
                 name: 'systemMessagePrompt',
                 type: 'string',
                 rows: 4,
-                placeholder: `You are a helpful assistant that translates {input_language} to {output_language}.`
+                placeholder: `你是一名得力助手，能将 {input_language} 翻译成 {output_language}。`
             },
             {
-                label: 'Human Message',
+                label: '人类消息',
                 name: 'humanMessagePrompt',
                 type: 'string',
                 rows: 4,
                 placeholder: `{text}`
             },
             {
-                label: 'Format Prompt Values',
+                label: '格式化提示值',
                 name: 'promptValues',
                 type: 'json',
                 optional: true,

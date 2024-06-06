@@ -22,7 +22,7 @@ class Figma_DocumentLoaders implements INode {
         this.version = 1.0
         this.type = 'Document'
         this.icon = 'figma.svg'
-        this.category = 'Document Loaders'
+        this.category = '文档加载器'
         this.description = 'Load data from a Figma file'
         this.baseClasses = [this.type]
         this.credential = {

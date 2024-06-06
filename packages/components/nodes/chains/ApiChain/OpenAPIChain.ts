@@ -19,33 +19,33 @@ class OpenApiChain_Chains implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'OpenAPI Chain'
+        this.label = 'OpenAPI 对话链'
         this.name = 'openApiChain'
         this.version = 2.0
         this.type = 'OpenAPIChain'
         this.icon = 'openapi.svg'
-        this.category = 'Chains'
-        this.description = 'Chain that automatically select and call APIs based only on an OpenAPI spec'
+        this.category = '对话链'
+        this.description = '仅根据 OpenAPI 规范自动选择和调用 API 的链'
         this.baseClasses = [this.type, ...getBaseClasses(APIChain)]
         this.inputs = [
             {
-                label: 'ChatOpenAI Model',
+                label: 'ChatOpenAI 模型',
                 name: 'model',
                 type: 'ChatOpenAI'
             },
             {
-                label: 'YAML Link',
+                label: 'YAML 链接',
                 name: 'yamlLink',
                 type: 'string',
                 placeholder: 'https://api.speak.com/openapi.yaml',
-                description: 'If YAML link is provided, uploaded YAML File will be ignored and YAML link will be used instead'
+                description: '如果提供了 YAML 链接，上传的 YAML 文件将被忽略，而使用 YAML 链接'
             },
             {
-                label: 'YAML File',
+                label: 'YAML 文件',
                 name: 'yamlFile',
                 type: 'file',
                 fileType: '.yaml',
-                description: 'If YAML link is provided, uploaded YAML File will be ignored and YAML link will be used instead'
+                description: 'I如果提供了 YAML 链接，上传的 YAML 文件将被忽略，而使用 YAML 链接'
             },
             {
                 label: 'Headers',
@@ -55,8 +55,8 @@ class OpenApiChain_Chains implements INode {
                 optional: true
             },
             {
-                label: 'Input Moderation',
-                description: 'Detect text that could generate harmful output and prevent it from being sent to the language model',
+                label: '输入调节',
+                description: '检测可能生成有害输出的文本并阻止其发送到语言模型',
                 name: 'inputModeration',
                 type: 'Moderation',
                 optional: true,

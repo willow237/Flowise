@@ -28,26 +28,26 @@ class GETApiChain_Chains implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'GET API Chain'
+        this.label = 'GET API 对话链'
         this.name = 'getApiChain'
         this.version = 1.0
         this.type = 'GETApiChain'
         this.icon = 'get.svg'
-        this.category = 'Chains'
-        this.description = 'Chain to run queries against GET API'
+        this.category = '对话链'
+        this.description = '针对 GET API 运行查询的链'
         this.baseClasses = [this.type, ...getBaseClasses(APIChain)]
         this.inputs = [
             {
-                label: 'Language Model',
+                label: '语言模型',
                 name: 'model',
                 type: 'BaseLanguageModel'
             },
             {
-                label: 'API Documentation',
+                label: 'API 文档',
                 name: 'apiDocs',
                 type: 'string',
                 description:
-                    'Description of how API works. Please refer to more <a target="_blank" href="https://github.com/langchain-ai/langchain/blob/master/libs/langchain/langchain/chains/api/open_meteo_docs.py">examples</a>',
+                    'API 工作原理的说明。请参考更多  <a target="_blank" href="https://github.com/langchain-ai/langchain/blob/master/libs/langchain/langchain/chains/api/open_meteo_docs.py">examples</a>',
                 rows: 4
             },
             {
@@ -58,20 +58,19 @@ class GETApiChain_Chains implements INode {
                 optional: true
             },
             {
-                label: 'URL Prompt',
+                label: 'URL 提示',
                 name: 'urlPrompt',
                 type: 'string',
-                description: 'Prompt used to tell LLMs how to construct the URL. Must contains {api_docs} and {question}',
+                description: '用于告诉 LLM 如何构建 URL 的提示。必须包含 {api_docs} 和 {question}',
                 default: API_URL_RAW_PROMPT_TEMPLATE,
                 rows: 4,
                 additionalParams: true
             },
             {
-                label: 'Answer Prompt',
+                label: '回答提示',
                 name: 'ansPrompt',
                 type: 'string',
-                description:
-                    'Prompt used to tell LLMs how to return the API response. Must contains {api_response}, {api_url}, and {question}',
+                description: '用于告诉 LLM 如何返回 API 响应的提示。 必须包含 {api_response}, {api_url}, 和 {question}',
                 default: API_RESPONSE_RAW_PROMPT_TEMPLATE,
                 rows: 4,
                 additionalParams: true

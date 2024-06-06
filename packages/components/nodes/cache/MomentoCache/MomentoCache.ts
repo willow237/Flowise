@@ -21,7 +21,7 @@ class MomentoCache implements INode {
         this.type = 'MomentoCache'
         this.description = 'Cache LLM response using Momento, a distributed, serverless cache'
         this.icon = 'Momento.svg'
-        this.category = 'Cache'
+        this.category = '缓存'
         this.baseClasses = [this.type, ...getBaseClasses(LangchainMomentoCache)]
         this.credential = {
             label: 'Connect Credential',

@@ -22,7 +22,7 @@ class ChatCohere_ChatModels implements INode {
         this.version = 1.0
         this.type = 'ChatCohere'
         this.icon = 'Cohere.svg'
-        this.category = 'Chat Models'
+        this.category = '聊天模型'
         this.description = 'Wrapper around Cohere Chat Endpoints'
         this.baseClasses = [this.type, ...getBaseClasses(ChatCohere)]
         this.credential = {

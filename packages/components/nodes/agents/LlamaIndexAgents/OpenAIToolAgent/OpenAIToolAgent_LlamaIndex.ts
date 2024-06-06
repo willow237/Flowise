@@ -18,34 +18,34 @@ class OpenAIFunctionAgent_LlamaIndex_Agents implements INode {
     badge?: string
 
     constructor(fields?: { sessionId?: string }) {
-        this.label = 'OpenAI Tool Agent'
+        this.label = 'OpenAI 工具智能体'
         this.name = 'openAIToolAgentLlamaIndex'
         this.version = 2.0
         this.type = 'OpenAIToolAgent'
-        this.category = 'Agents'
+        this.category = '智能体'
         this.icon = 'function.svg'
-        this.description = `Agent that uses OpenAI Function Calling to pick the tools and args to call using LlamaIndex`
+        this.description = `使用 OpenAI 函数调用的智能体，利用 LlamaIndex 挑选要调用的工具和参数`
         this.baseClasses = [this.type, ...getBaseClasses(OpenAIAgent)]
         this.tags = ['LlamaIndex']
         this.inputs = [
             {
-                label: 'Tools',
+                label: '工具',
                 name: 'tools',
                 type: 'Tool_LlamaIndex',
                 list: true
             },
             {
-                label: 'Memory',
+                label: '记忆存储',
                 name: 'memory',
                 type: 'BaseChatMemory'
             },
             {
-                label: 'OpenAI/Azure Chat Model',
+                label: 'OpenAI/Azure 聊天模型',
                 name: 'model',
                 type: 'BaseChatModel_LlamaIndex'
             },
             {
-                label: 'System Message',
+                label: '系统信息',
                 name: 'systemMessage',
                 type: 'string',
                 rows: 4,

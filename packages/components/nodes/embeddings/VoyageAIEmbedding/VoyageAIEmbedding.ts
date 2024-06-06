@@ -21,7 +21,7 @@ class VoyageAIEmbedding_Embeddings implements INode {
         this.version = 2.0
         this.type = 'VoyageAIEmbeddings'
         this.icon = 'voyageai.png'
-        this.category = 'Embeddings'
+        this.category = '嵌入'
         this.description = 'Voyage AI API to generate embeddings for a given text'
         this.baseClasses = [this.type, ...getBaseClasses(VoyageEmbeddings)]
         this.credential = {

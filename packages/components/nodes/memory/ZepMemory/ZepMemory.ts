@@ -28,7 +28,7 @@ class ZepMemory_Memory implements INode {
         this.version = 2.0
         this.type = 'ZepMemory'
         this.icon = 'zep.svg'
-        this.category = 'Memory'
+        this.category = '记忆存储'
         this.description = 'Summarizes the conversation and stores the memory in zep server'
         this.baseClasses = [this.type, ...getBaseClasses(ZepMemory)]
         this.credential = {

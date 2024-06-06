@@ -22,7 +22,7 @@ class Groq_ChatModels implements INode {
         this.version = 3.0
         this.type = 'GroqChat'
         this.icon = 'groq.png'
-        this.category = 'Chat Models'
+        this.category = '聊天模型'
         this.description = 'Wrapper around Groq API with LPU Inference Engine'
         this.baseClasses = [this.type, ...getBaseClasses(ChatGroq)]
         this.credential = {

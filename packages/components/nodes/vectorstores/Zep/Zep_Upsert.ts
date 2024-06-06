@@ -25,7 +25,7 @@ class Zep_Upsert_VectorStores implements INode {
         this.version = 1.0
         this.type = 'Zep'
         this.icon = 'zep.svg'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.description = 'Upsert documents to Zep'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.badge = 'DEPRECATING'

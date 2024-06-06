@@ -51,50 +51,50 @@ class XMLAgent_Agents implements INode {
     badge?: string
 
     constructor(fields?: { sessionId?: string }) {
-        this.label = 'XML Agent'
+        this.label = 'XML 智能体'
         this.name = 'xmlAgent'
         this.version = 2.0
         this.type = 'XMLAgent'
-        this.category = 'Agents'
+        this.category = '智能体'
         this.icon = 'xmlagent.svg'
-        this.description = `Agent that is designed for LLMs that are good for reasoning/writing XML (e.g: Anthropic Claude)`
+        this.description = `专为擅长推理/编写 XML 的 LLM 设计的智能体（例如：Anthropic Claude）`
         this.baseClasses = [this.type, ...getBaseClasses(AgentExecutor)]
         this.inputs = [
             {
-                label: 'Tools',
+                label: '工具',
                 name: 'tools',
                 type: 'Tool',
                 list: true
             },
             {
-                label: 'Memory',
+                label: '记忆存储',
                 name: 'memory',
                 type: 'BaseChatMemory'
             },
             {
-                label: 'Chat Model',
+                label: '聊天模型',
                 name: 'model',
                 type: 'BaseChatModel'
             },
             {
-                label: 'System Message',
+                label: '系统信息',
                 name: 'systemMessage',
                 type: 'string',
-                warning: 'Prompt must include input variables: {tools}, {chat_history}, {input} and {agent_scratchpad}',
+                warning: '提示词必须包含输入变量：{tools}, {chat_history}, {input} and {agent_scratchpad}',
                 rows: 4,
                 default: defaultSystemMessage,
                 additionalParams: true
             },
             {
-                label: 'Input Moderation',
-                description: 'Detect text that could generate harmful output and prevent it from being sent to the language model',
+                label: '输入调节',
+                description: '检测可能生成有害输出的文本并阻止其发送到语言模型',
                 name: 'inputModeration',
                 type: 'Moderation',
                 optional: true,
                 list: true
             },
             {
-                label: 'Max Iterations',
+                label: '最大迭代次数',
                 name: 'maxIterations',
                 type: 'number',
                 optional: true,

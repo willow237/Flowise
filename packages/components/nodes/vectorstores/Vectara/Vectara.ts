@@ -33,7 +33,7 @@ class Vectara_VectorStores implements INode {
         this.version = 2.0
         this.type = 'Vectara'
         this.icon = 'vectara.png'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.description = 'Upsert embedded data and perform similarity search upon query using Vectara, a LLM-powered search-as-a-service'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.badge = 'NEW'

@@ -35,7 +35,7 @@ class E2B_Tools implements INode {
         this.version = 1.0
         this.type = 'E2B'
         this.icon = 'e2b.png'
-        this.category = 'Tools'
+        this.category = '工具'
         this.badge = 'NEW'
         this.description = 'Execute code in E2B Code Intepreter'
         this.baseClasses = [this.type, 'Tool', ...getBaseClasses(E2BTool)]

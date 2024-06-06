@@ -32,7 +32,7 @@ class Upstash_VectorStores implements INode {
         this.version = 1.0
         this.type = 'Upstash'
         this.icon = 'upstash.svg'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.description =
             'Upsert data as embedding or string and perform similarity search with Upstash, the leading serverless data platform'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']

@@ -29,51 +29,51 @@ class AutoGPT_Agents implements INode {
         this.name = 'autoGPT'
         this.version = 2.0
         this.type = 'AutoGPT'
-        this.category = 'Agents'
+        this.category = '智能体'
         this.icon = 'autogpt.svg'
-        this.description = 'Autonomous agent with chain of thoughts for self-guided task completion'
+        this.description = '具有思维链的自主智能体，在自我指导下完成任务'
         this.baseClasses = ['AutoGPT']
         this.inputs = [
             {
-                label: 'Allowed Tools',
+                label: '允许的工具',
                 name: 'tools',
                 type: 'Tool',
                 list: true
             },
             {
-                label: 'Chat Model',
+                label: '聊天模型',
                 name: 'model',
                 type: 'BaseChatModel'
             },
             {
-                label: 'Vector Store Retriever',
+                label: '向量存储检索器',
                 name: 'vectorStoreRetriever',
                 type: 'BaseRetriever'
             },
             {
-                label: 'AutoGPT Name',
+                label: 'AutoGPT 名称',
                 name: 'aiName',
                 type: 'string',
                 placeholder: 'Tom',
                 optional: true
             },
             {
-                label: 'AutoGPT Role',
+                label: 'AutoGPT 角色',
                 name: 'aiRole',
                 type: 'string',
                 placeholder: 'Assistant',
                 optional: true
             },
             {
-                label: 'Maximum Loop',
+                label: '最大循环',
                 name: 'maxLoop',
                 type: 'number',
                 default: 5,
                 optional: true
             },
             {
-                label: 'Input Moderation',
-                description: 'Detect text that could generate harmful output and prevent it from being sent to the language model',
+                label: '输入调节',
+                description: '检测可能生成有害输出的文本并阻止其发送到语言模型',
                 name: 'inputModeration',
                 type: 'Moderation',
                 optional: true,

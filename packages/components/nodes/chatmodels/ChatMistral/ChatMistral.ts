@@ -22,7 +22,7 @@ class ChatMistral_ChatModels implements INode {
         this.version = 3.0
         this.type = 'ChatMistralAI'
         this.icon = 'MistralAI.svg'
-        this.category = 'Chat Models'
+        this.category = '聊天模型'
         this.description = 'Wrapper around Mistral large language models that use the Chat endpoint'
         this.baseClasses = [this.type, ...getBaseClasses(ChatMistralAI)]
         this.credential = {

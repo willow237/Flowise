@@ -22,7 +22,7 @@ class SQLiteRecordManager_RecordManager implements INode {
         this.version = 1.0
         this.type = 'SQLite RecordManager'
         this.icon = 'sqlite.png'
-        this.category = 'Record Manager'
+        this.category = '记录管理器'
         this.description = 'Use SQLite to keep track of document writes into the vector databases'
         this.baseClasses = [this.type, 'RecordManager', ...getBaseClasses(SQLiteRecordManager)]
         this.badge = 'NEW'

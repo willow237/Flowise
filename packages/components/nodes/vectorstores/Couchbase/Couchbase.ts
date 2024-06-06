@@ -31,7 +31,7 @@ class Couchbase_VectorStores implements INode {
         this.version = 1.0
         this.type = 'Couchbase'
         this.icon = 'couchbase.svg'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.description = `Upsert embedded data and load existing index using Couchbase, a award-winning distributed NoSQL database`
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.credential = {

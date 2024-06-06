@@ -20,7 +20,7 @@ class TogetherAIEmbedding_Embeddings implements INode {
         this.version = 1.0
         this.type = 'TogetherAIEmbedding'
         this.icon = 'togetherai.png'
-        this.category = 'Embeddings'
+        this.category = '嵌入'
         this.description = 'TogetherAI Embedding models to generate embeddings for a given text'
         this.baseClasses = [this.type, ...getBaseClasses(TogetherAIEmbeddings)]
         this.credential = {

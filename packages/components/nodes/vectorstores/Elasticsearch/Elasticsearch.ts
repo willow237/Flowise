@@ -29,7 +29,7 @@ class Elasticsearch_VectorStores implements INode {
             'Upsert embedded data and perform similarity search upon query using Elasticsearch, a distributed search and analytics engine'
         this.type = 'Elasticsearch'
         this.icon = 'elasticsearch.png'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.badge = 'NEW'
         this.credential = {

@@ -23,7 +23,7 @@ class VectaraUpload_VectorStores implements INode {
         this.version = 1.0
         this.type = 'Vectara'
         this.icon = 'vectara.png'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.description = 'Upload files to Vectara'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.badge = 'DEPRECATING'

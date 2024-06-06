@@ -19,28 +19,28 @@ class RetrievalQAChain_Chains implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Retrieval QA Chain'
+        this.label = '检索 QA 对话链'
         this.name = 'retrievalQAChain'
         this.version = 2.0
         this.type = 'RetrievalQAChain'
         this.icon = 'qa.svg'
-        this.category = 'Chains'
-        this.description = 'QA chain to answer a question based on the retrieved documents'
+        this.category = '对话链'
+        this.description = 'QA 对话链根据检索到的文档回答问题'
         this.baseClasses = [this.type, ...getBaseClasses(RetrievalQAChain)]
         this.inputs = [
             {
-                label: 'Language Model',
+                label: '语言模型',
                 name: 'model',
                 type: 'BaseLanguageModel'
             },
             {
-                label: 'Vector Store Retriever',
+                label: '向量存储检索器',
                 name: 'vectorStoreRetriever',
                 type: 'BaseRetriever'
             },
             {
-                label: 'Input Moderation',
-                description: 'Detect text that could generate harmful output and prevent it from being sent to the language model',
+                label: '输入调节',
+                description: '检测可能产生有害输出的文本，防止将其发送给语言模型',
                 name: 'inputModeration',
                 type: 'Moderation',
                 optional: true,

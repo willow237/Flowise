@@ -54,7 +54,7 @@ export abstract class RedisSearchBase {
     protected constructor() {
         this.type = 'Redis'
         this.icon = 'redis.svg'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.badge = 'DEPRECATING'
         this.credential = {

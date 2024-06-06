@@ -22,7 +22,7 @@ class ChatOllama_ChatModels implements INode {
         this.version = 2.0
         this.type = 'ChatOllama'
         this.icon = 'Ollama.svg'
-        this.category = 'Chat Models'
+        this.category = '聊天模型'
         this.description = 'Chat completion using open-source LLM on Ollama'
         this.baseClasses = [this.type, ...getBaseClasses(ChatOllama)]
         this.inputs = [

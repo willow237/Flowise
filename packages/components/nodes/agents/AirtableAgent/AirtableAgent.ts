@@ -22,13 +22,13 @@ class Airtable_Agents implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Airtable Agent'
+        this.label = 'Airtable 智能体'
         this.name = 'airtableAgent'
         this.version = 2.0
         this.type = 'AgentExecutor'
-        this.category = 'Agents'
+        this.category = '智能体'
         this.icon = 'airtable.svg'
-        this.description = 'Agent used to to answer queries on Airtable table'
+        this.description = '用于回答 Airtable 表查询的智能体'
         this.baseClasses = [this.type, ...getBaseClasses(AgentExecutor)]
         this.credential = {
             label: 'Connect Credential',
@@ -38,7 +38,7 @@ class Airtable_Agents implements INode {
         }
         this.inputs = [
             {
-                label: 'Language Model',
+                label: '语言模型',
                 name: 'model',
                 type: 'BaseLanguageModel'
             },
@@ -48,7 +48,7 @@ class Airtable_Agents implements INode {
                 type: 'string',
                 placeholder: 'app11RobdGoX0YNsC',
                 description:
-                    'If your table URL looks like: https://airtable.com/app11RobdGoX0YNsC/tblJdmvbrgizbYICO/viw9UrP77Id0CE4ee, app11RovdGoX0YNsC is the base id'
+                    '如果您的表格 URL 是这样的：https://airtable.com/app11RobdGoX0YNsC/tblJdmvbrgizbYICO/viw9UrP77Id0CE4ee, app11RovdGoX0YNsC 是 base id'
             },
             {
                 label: 'Table Id',
@@ -56,27 +56,27 @@ class Airtable_Agents implements INode {
                 type: 'string',
                 placeholder: 'tblJdmvbrgizbYICO',
                 description:
-                    'If your table URL looks like: https://airtable.com/app11RobdGoX0YNsC/tblJdmvbrgizbYICO/viw9UrP77Id0CE4ee, tblJdmvbrgizbYICO is the table id'
+                    '如果您的表格 URL 是这样的：https://airtable.com/app11RobdGoX0YNsC/tblJdmvbrgizbYICO/viw9UrP77Id0CE4ee, tblJdmvbrgizbYICO 是 table id'
             },
             {
-                label: 'Return All',
+                label: '返回全部',
                 name: 'returnAll',
                 type: 'boolean',
                 default: true,
                 additionalParams: true,
-                description: 'If all results should be returned or only up to a given limit'
+                description: '是返回所有结果，还是只返回给定限制内的结果'
             },
             {
-                label: 'Limit',
+                label: '限制',
                 name: 'limit',
                 type: 'number',
                 default: 100,
                 additionalParams: true,
-                description: 'Number of results to return'
+                description: '返回的结果数'
             },
             {
-                label: 'Input Moderation',
-                description: 'Detect text that could generate harmful output and prevent it from being sent to the language model',
+                label: '输入调节',
+                description: '检测可能生成有害输出的文本并阻止其发送到语言模型',
                 name: 'inputModeration',
                 type: 'Moderation',
                 optional: true,

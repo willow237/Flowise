@@ -31,7 +31,7 @@ class ConversationSummaryBufferMemory_Memory implements INode {
         this.version = 1.0
         this.type = 'ConversationSummaryBufferMemory'
         this.icon = 'memory.svg'
-        this.category = 'Memory'
+        this.category = '记忆存储'
         this.description = 'Uses token length to decide when to summarize conversations'
         this.baseClasses = [this.type, ...getBaseClasses(ConversationSummaryBufferMemory)]
         this.inputs = [

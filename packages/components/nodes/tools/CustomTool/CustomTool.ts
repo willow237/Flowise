@@ -16,16 +16,16 @@ class CustomTool_Tools implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Custom Tool'
+        this.label = '自定义工具'
         this.name = 'customTool'
         this.version = 1.0
         this.type = 'CustomTool'
         this.icon = 'customtool.svg'
-        this.category = 'Tools'
-        this.description = `Use custom tool you've created in Flowise within chatflow`
+        this.category = '工具'
+        this.description = `在聊天流程中使用您在 Flowise 中创建的自定义工具`
         this.inputs = [
             {
-                label: 'Select Tool',
+                label: '选择工具',
                 name: 'selectedTool',
                 type: 'asyncOptions',
                 loadMethod: 'listTools'

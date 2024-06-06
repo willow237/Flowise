@@ -60,7 +60,7 @@ class RedisEmbeddingsCache implements INode {
         this.type = 'RedisEmbeddingsCache'
         this.description = 'Cache generated Embeddings in Redis to avoid needing to recompute them.'
         this.icon = 'redis.svg'
-        this.category = 'Cache'
+        this.category = '缓存'
         this.baseClasses = [this.type, ...getBaseClasses(CacheBackedEmbeddings)]
         this.credential = {
             label: 'Connect Credential',

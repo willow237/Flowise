@@ -17,18 +17,18 @@ class DocStore_DocumentLoaders implements INode {
     badge: string
 
     constructor() {
-        this.label = 'Document Store'
+        this.label = '文件存储'
         this.name = 'documentStore'
         this.version = 1.0
         this.type = 'Document'
         this.icon = 'dstore.svg'
         this.badge = 'NEW'
-        this.category = 'Document Loaders'
-        this.description = `Load data from pre-configured document stores`
+        this.category = '文档加载器'
+        this.description = `从预先配置的文件存储区加载数据`
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Select Store',
+                label: '选择存储',
                 name: 'selectedStore',
                 type: 'asyncOptions',
                 loadMethod: 'listStores'
@@ -36,15 +36,15 @@ class DocStore_DocumentLoaders implements INode {
         ]
         this.outputs = [
             {
-                label: 'Document',
+                label: '文档',
                 name: 'document',
-                description: 'Array of document objects containing metadata and pageContent',
+                description: '包含元数据和页面内容的文档对象数组',
                 baseClasses: [...this.baseClasses, 'json']
             },
             {
-                label: 'Text',
+                label: '文本',
                 name: 'text',
-                description: 'Concatenated string from pageContent of documents',
+                description: '从文件的页面内容中提取的并集字符串',
                 baseClasses: ['string', 'json']
             }
         ]

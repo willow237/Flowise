@@ -28,53 +28,53 @@ class ToolAgent_Agents implements INode {
     badge?: string
 
     constructor(fields?: { sessionId?: string }) {
-        this.label = 'Tool Agent'
+        this.label = '工具智能体'
         this.name = 'toolAgent'
         this.version = 1.0
         this.type = 'AgentExecutor'
-        this.category = 'Agents'
+        this.category = '智能体'
         this.icon = 'toolAgent.png'
-        this.description = `Agent that uses Function Calling to pick the tools and args to call`
+        this.description = `使用函数调用来选择要调用的工具和参数的智能体`
         this.baseClasses = [this.type, ...getBaseClasses(AgentExecutor)]
         this.badge = 'NEW'
         this.inputs = [
             {
-                label: 'Tools',
+                label: '工具',
                 name: 'tools',
                 type: 'Tool',
                 list: true
             },
             {
-                label: 'Memory',
+                label: '记忆存储',
                 name: 'memory',
                 type: 'BaseChatMemory'
             },
             {
-                label: 'Tool Calling Chat Model',
+                label: '工具调用聊天模型',
                 name: 'model',
                 type: 'BaseChatModel',
                 description:
-                    'Only compatible with models that are capable of function calling: ChatOpenAI, ChatMistral, ChatAnthropic, ChatGoogleGenerativeAI, ChatVertexAI, GroqChat'
+                    '仅与能够调用函数的模型兼容：ChatOpenAI, ChatMistral, ChatAnthropic, ChatGoogleGenerativeAI, ChatVertexAI, GroqChat'
             },
             {
-                label: 'System Message',
+                label: '系统信息',
                 name: 'systemMessage',
                 type: 'string',
-                default: `You are a helpful AI assistant.`,
+                default: `你是一个有用的人工智能助手。`,
                 rows: 4,
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Input Moderation',
-                description: 'Detect text that could generate harmful output and prevent it from being sent to the language model',
+                label: '输入调节',
+                description: '检测可能生成有害输出的文本并阻止其发送到语言模型',
                 name: 'inputModeration',
                 type: 'Moderation',
                 optional: true,
                 list: true
             },
             {
-                label: 'Max Iterations',
+                label: '最大迭代次数',
                 name: 'maxIterations',
                 type: 'number',
                 optional: true,

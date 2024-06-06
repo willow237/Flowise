@@ -25,34 +25,34 @@ class BufferWindowMemory_Memory implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Buffer Window Memory'
+        this.label = '缓冲窗口内存'
         this.name = 'bufferWindowMemory'
         this.version = 2.0
         this.type = 'BufferWindowMemory'
         this.icon = 'memory.svg'
-        this.category = 'Memory'
-        this.description = 'Uses a window of size k to surface the last k back-and-forth to use as memory'
+        this.category = '记忆存储'
+        this.description = '使用大小为 k 的窗口来显示最后 k 个来回，作为内存使用'
         this.baseClasses = [this.type, ...getBaseClasses(BufferWindowMemory)]
         this.inputs = [
             {
-                label: 'Size',
+                label: '大小',
                 name: 'k',
                 type: 'number',
                 default: '4',
-                description: 'Window of size k to surface the last k back-and-forth to use as memory.'
+                description: '大小为 k 的窗口，用于显示最后 k 个来回作为内存使用。'
             },
             {
                 label: 'Session Id',
                 name: 'sessionId',
                 type: 'string',
                 description:
-                    'If not specified, a random id will be used. Learn <a target="_blank" href="https://docs.flowiseai.com/memory#ui-and-embedded-chat">more</a>',
+                    '如果未指定，将使用随机 ID。 了解 <a target="_blank" href="https://docs.flowiseai.com/memory#ui-and-embedded-chat">更多</a>',
                 default: '',
                 optional: true,
                 additionalParams: true
             },
             {
-                label: 'Memory Key',
+                label: '记忆存储键',
                 name: 'memoryKey',
                 type: 'string',
                 default: 'chat_history',

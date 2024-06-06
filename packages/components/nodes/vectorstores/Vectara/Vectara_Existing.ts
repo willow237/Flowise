@@ -22,7 +22,7 @@ class VectaraExisting_VectorStores implements INode {
         this.version = 1.0
         this.type = 'Vectara'
         this.icon = 'vectara.png'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.description = 'Load existing index from Vectara (i.e: Document has been upserted)'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.badge = 'DEPRECATING'

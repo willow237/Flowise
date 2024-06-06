@@ -44,30 +44,30 @@ class ConversationChain_Chains implements INode {
     sessionId?: string
 
     constructor(fields?: { sessionId?: string }) {
-        this.label = 'Conversation Chain'
+        this.label = '对话链'
         this.name = 'conversationChain'
         this.version = 3.0
         this.type = 'ConversationChain'
         this.icon = 'conv.svg'
-        this.category = 'Chains'
-        this.description = 'Chat models specific conversational chain with memory'
+        this.category = '对话链'
+        this.description = '带有记忆功能的聊天模型特定对话链'
         this.baseClasses = [this.type, ...getBaseClasses(ConversationChain)]
         this.inputs = [
             {
-                label: 'Chat Model',
+                label: '聊天模型',
                 name: 'model',
                 type: 'BaseChatModel'
             },
             {
-                label: 'Memory',
+                label: '记忆存储',
                 name: 'memory',
                 type: 'BaseMemory'
             },
             {
-                label: 'Chat Prompt Template',
+                label: '聊天提示模板',
                 name: 'chatPromptTemplate',
                 type: 'ChatPromptTemplate',
-                description: 'Override existing prompt with Chat Prompt Template. Human Message must includes {input} variable',
+                description: '使用聊天提示模板覆盖现有提示。人类消息必须包括 {input} 变量',
                 optional: true
             },
             /* Deprecated
@@ -81,19 +81,19 @@ class ConversationChain_Chains implements INode {
                 list: true
             },*/
             {
-                label: 'Input Moderation',
-                description: 'Detect text that could generate harmful output and prevent it from being sent to the language model',
+                label: '输入调节',
+                description: '检测可能生成有害输出的文本并阻止其发送到语言模型',
                 name: 'inputModeration',
                 type: 'Moderation',
                 optional: true,
                 list: true
             },
             {
-                label: 'System Message',
+                label: '系统信息',
                 name: 'systemMessagePrompt',
                 type: 'string',
                 rows: 4,
-                description: 'If Chat Prompt Template is provided, this will be ignored',
+                description: '如果提供了聊天提示模板，则将忽略此提示',
                 additionalParams: true,
                 optional: true,
                 default: systemMessage,

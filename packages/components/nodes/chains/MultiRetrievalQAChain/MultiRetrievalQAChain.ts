@@ -18,35 +18,35 @@ class MultiRetrievalQAChain_Chains implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Multi Retrieval QA Chain'
+        this.label = '多检索 QA 对话链'
         this.name = 'multiRetrievalQAChain'
         this.version = 2.0
         this.type = 'MultiRetrievalQAChain'
         this.icon = 'qa.svg'
-        this.category = 'Chains'
-        this.description = 'QA Chain that automatically picks an appropriate vector store from multiple retrievers'
+        this.category = '对话链'
+        this.description = 'QA 对话链可自动从多个检索器中挑选合适的向量存储'
         this.baseClasses = [this.type, ...getBaseClasses(MultiRetrievalQAChain)]
         this.inputs = [
             {
-                label: 'Language Model',
+                label: '语言模型',
                 name: 'model',
                 type: 'BaseLanguageModel'
             },
             {
-                label: 'Vector Store Retriever',
+                label: '向量存储检索器',
                 name: 'vectorStoreRetriever',
                 type: 'VectorStoreRetriever',
                 list: true
             },
             {
-                label: 'Return Source Documents',
+                label: '返回源文档',
                 name: 'returnSourceDocuments',
                 type: 'boolean',
                 optional: true
             },
             {
-                label: 'Input Moderation',
-                description: 'Detect text that could generate harmful output and prevent it from being sent to the language model',
+                label: '输入调节',
+                description: '检测可能产生有害输出的文本，防止将其发送给语言模型',
                 name: 'inputModeration',
                 type: 'Moderation',
                 optional: true,

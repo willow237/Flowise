@@ -30,7 +30,7 @@ export abstract class ElasticSearchBase {
     protected constructor() {
         this.type = 'Elasticsearch'
         this.icon = 'elasticsearch.png'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.badge = 'DEPRECATING'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.credential = {

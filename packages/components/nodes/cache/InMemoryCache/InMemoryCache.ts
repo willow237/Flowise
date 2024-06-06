@@ -21,7 +21,7 @@ class InMemoryCache implements INode {
         this.type = 'InMemoryCache'
         this.description = 'Cache LLM response in memory, will be cleared once app restarted'
         this.icon = 'Memory.svg'
-        this.category = 'Cache'
+        this.category = '缓存'
         this.baseClasses = [this.type, ...getBaseClasses(InMemoryCacheExtended)]
         this.inputs = []
     }

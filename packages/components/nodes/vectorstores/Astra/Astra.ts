@@ -26,7 +26,7 @@ class Astra_VectorStores implements INode {
         this.version = 2.0
         this.type = 'Astra'
         this.icon = 'astra.svg'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.description = `Upsert embedded data and perform similarity or mmr search upon query using DataStax Astra DB, a serverless vector database that’s perfect for managing mission-critical AI workloads`
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.credential = {

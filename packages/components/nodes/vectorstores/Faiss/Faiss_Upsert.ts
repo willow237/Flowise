@@ -24,7 +24,7 @@ class FaissUpsert_VectorStores implements INode {
         this.version = 1.0
         this.type = 'Faiss'
         this.icon = 'faiss.svg'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.description = 'Upsert documents to Faiss'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.badge = 'DEPRECATING'

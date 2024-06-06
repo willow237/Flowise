@@ -24,7 +24,7 @@ class SimpleStoreUpsert_LlamaIndex_VectorStores implements INode {
         this.version = 1.0
         this.type = 'SimpleVectorStore'
         this.icon = 'simplevs.svg'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.description = 'Upsert embedded data to local path and perform similarity search'
         this.baseClasses = [this.type, 'VectorIndexRetriever']
         this.tags = ['LlamaIndex']

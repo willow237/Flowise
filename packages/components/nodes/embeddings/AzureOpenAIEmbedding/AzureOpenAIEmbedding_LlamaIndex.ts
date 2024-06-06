@@ -28,7 +28,7 @@ class AzureOpenAIEmbedding_LlamaIndex_Embeddings implements INode {
         this.version = 1.0
         this.type = 'AzureOpenAIEmbeddings'
         this.icon = 'Azure.svg'
-        this.category = 'Embeddings'
+        this.category = '嵌入'
         this.description = 'Azure OpenAI API embeddings specific for LlamaIndex'
         this.baseClasses = [this.type, 'BaseEmbedding_LlamaIndex', ...getBaseClasses(OpenAIEmbedding)]
         this.tags = ['LlamaIndex']

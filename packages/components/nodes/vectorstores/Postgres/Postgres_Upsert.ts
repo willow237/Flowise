@@ -27,7 +27,7 @@ class PostgresUpsert_VectorStores implements INode {
         this.version = 2.0
         this.type = 'Postgres'
         this.icon = 'postgres.svg'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.description = 'Upsert documents to Postgres using pgvector'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.badge = 'DEPRECATING'

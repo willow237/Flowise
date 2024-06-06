@@ -20,7 +20,7 @@ class AzureOpenAIEmbedding_Embeddings implements INode {
         this.version = 1.0
         this.type = 'AzureOpenAIEmbeddings'
         this.icon = 'Azure.svg'
-        this.category = 'Embeddings'
+        this.category = '嵌入'
         this.description = 'Azure OpenAI API to generate embeddings for a given text'
         this.baseClasses = [this.type, ...getBaseClasses(OpenAIEmbeddings)]
         this.credential = {

@@ -130,7 +130,7 @@ const Chatflows = () => {
                 <ErrorBoundary error={error} />
             ) : (
                 <Stack flexDirection='column' sx={{ gap: 3 }}>
-                    <ViewHeader onSearchChange={onSearchChange} search={true} searchPlaceholder='Search Name or Category' title='Chatflows'>
+                    <ViewHeader onSearchChange={onSearchChange} search={true} searchPlaceholder='搜索名称或类别' title='聊天流程'>
                         <ToggleButtonGroup
                             sx={{ borderRadius: 2, maxHeight: 40 }}
                             value={view}
@@ -164,7 +164,7 @@ const Chatflows = () => {
                             </ToggleButton>
                         </ToggleButtonGroup>
                         <StyledButton variant='contained' onClick={addNew} startIcon={<IconPlus />} sx={{ borderRadius: 2, height: 40 }}>
-                            Add New
+                            新建
                         </StyledButton>
                     </ViewHeader>
                     {!view || view === 'card' ? (

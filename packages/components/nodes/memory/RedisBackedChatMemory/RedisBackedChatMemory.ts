@@ -66,7 +66,7 @@ class RedisBackedChatMemory_Memory implements INode {
         this.version = 2.0
         this.type = 'RedisBackedChatMemory'
         this.icon = 'redis.svg'
-        this.category = 'Memory'
+        this.category = '记忆存储'
         this.description = 'Summarizes the conversation and stores the memory in Redis server'
         this.baseClasses = [this.type, ...getBaseClasses(BufferMemory)]
         this.credential = {

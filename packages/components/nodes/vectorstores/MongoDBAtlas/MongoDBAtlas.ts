@@ -28,7 +28,7 @@ class MongoDBAtlas_VectorStores implements INode {
         this.description = `Upsert embedded data and perform similarity or mmr search upon query using MongoDB Atlas, a managed cloud mongodb database`
         this.type = 'MongoDB Atlas'
         this.icon = 'mongodb.svg'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.badge = 'NEW'
         this.credential = {

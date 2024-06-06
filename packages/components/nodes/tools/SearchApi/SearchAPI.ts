@@ -20,7 +20,7 @@ class SearchAPI_Tools implements INode {
         this.version = 1.0
         this.type = 'SearchAPI'
         this.icon = 'searchapi.svg'
-        this.category = 'Tools'
+        this.category = '工具'
         this.description = 'Real-time API for accessing Google Search data'
         this.inputs = []
         this.credential = {

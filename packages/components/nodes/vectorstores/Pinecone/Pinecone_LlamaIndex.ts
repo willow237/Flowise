@@ -38,7 +38,7 @@ class PineconeLlamaIndex_VectorStores implements INode {
         this.version = 1.0
         this.type = 'Pinecone'
         this.icon = 'pinecone.svg'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.description = `Upsert embedded data and perform similarity search upon query using Pinecone, a leading fully managed hosted vector database`
         this.baseClasses = [this.type, 'VectorIndexRetriever']
         this.tags = ['LlamaIndex']

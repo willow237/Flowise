@@ -24,7 +24,7 @@ class Weaviate_Existing_VectorStores implements INode {
         this.version = 1.0
         this.type = 'Weaviate'
         this.icon = 'weaviate.png'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.description = 'Load existing index from Weaviate (i.e: Document has been upserted)'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.badge = 'DEPRECATING'

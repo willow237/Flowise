@@ -21,7 +21,7 @@ class MistralEmbedding_Embeddings implements INode {
         this.version = 2.0
         this.type = 'MistralAIEmbeddings'
         this.icon = 'MistralAI.svg'
-        this.category = 'Embeddings'
+        this.category = '嵌入'
         this.description = 'MistralAI API to generate embeddings for a given text'
         this.baseClasses = [this.type, ...getBaseClasses(MistralAIEmbeddings)]
         this.credential = {

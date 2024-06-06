@@ -21,7 +21,7 @@ class IfElseFunction_Utilities implements INode {
         this.version = 1.0
         this.type = 'IfElseFunction'
         this.icon = 'ifelsefunction.svg'
-        this.category = 'Utilities'
+        this.category = '实用工具'
         this.description = `Split flows based on If Else javascript functions`
         this.baseClasses = [this.type, 'Utilities']
         this.inputs = [

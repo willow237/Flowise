@@ -22,7 +22,7 @@ class MySQLRecordManager_RecordManager implements INode {
         this.version = 1.0
         this.type = 'MySQL RecordManager'
         this.icon = 'mysql.png'
-        this.category = 'Record Manager'
+        this.category = '记录管理器'
         this.description = 'Use MySQL to keep track of document writes into the vector databases'
         this.baseClasses = [this.type, 'RecordManager', ...getBaseClasses(MySQLRecordManager)]
         this.badge = 'NEW'

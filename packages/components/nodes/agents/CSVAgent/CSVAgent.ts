@@ -22,47 +22,47 @@ class CSV_Agents implements INode {
 
     constructor() {
         this.label = 'CSV Agent'
-        this.name = 'csvAgent'
+        this.name = 'csv 智能体'
         this.version = 3.0
         this.type = 'AgentExecutor'
-        this.category = 'Agents'
+        this.category = '智能体'
         this.icon = 'CSVagent.svg'
-        this.description = 'Agent used to to answer queries on CSV data'
+        this.description = '用于回答 CSV 数据查询的智能体'
         this.baseClasses = [this.type, ...getBaseClasses(AgentExecutor)]
         this.inputs = [
             {
-                label: 'Csv File',
+                label: 'Csv 文件',
                 name: 'csvFile',
                 type: 'file',
                 fileType: '.csv'
             },
             {
-                label: 'Language Model',
+                label: '语言模型',
                 name: 'model',
                 type: 'BaseLanguageModel'
             },
             {
-                label: 'System Message',
+                label: '系统信息',
                 name: 'systemMessagePrompt',
                 type: 'string',
                 rows: 4,
                 additionalParams: true,
                 optional: true,
                 placeholder:
-                    'I want you to act as a document that I am having a conversation with. Your name is "AI Assistant". You will provide me with answers from the given info. If the answer is not included, say exactly "Hmm, I am not sure." and stop after that. Refuse to answer any question not about the info. Never break character.'
+                    '我想让你充当一份与我对话的文件。你的名字是 “人工智能助理”。你要根据给出的信息为我提供答案。如果没有答案，请准确地说 “嗯，我不确定”，然后停止对话。拒绝回答任何与信息无关的问题。切勿破坏角色。'
             },
             {
-                label: 'Input Moderation',
-                description: 'Detect text that could generate harmful output and prevent it from being sent to the language model',
+                label: '输入调节',
+                description: '检测可能生成有害输出的文本并阻止其发送到语言模型',
                 name: 'inputModeration',
                 type: 'Moderation',
                 optional: true,
                 list: true
             },
             {
-                label: 'Custom Pandas Read_CSV Code',
+                label: '自定义 Pandas Read_CSV 代码',
                 description:
-                    'Custom Pandas <a target="_blank" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html">read_csv</a> function. Takes in an input: "csv_data"',
+                    '自定义 Pandas <a target="_blank" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html">read_csv</a> 函数。 输入："csv_data"',
                 name: 'customReadCSV',
                 default: 'read_csv(csv_data)',
                 type: 'code',

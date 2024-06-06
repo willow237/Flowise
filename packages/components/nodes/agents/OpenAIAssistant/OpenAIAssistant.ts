@@ -25,41 +25,41 @@ class OpenAIAssistant_Agents implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'OpenAI Assistant'
+        this.label = 'OpenAI 智能体'
         this.name = 'openAIAssistant'
         this.version = 3.0
         this.type = 'OpenAIAssistant'
-        this.category = 'Agents'
+        this.category = '智能体'
         this.icon = 'assistant.svg'
-        this.description = `An agent that uses OpenAI Assistant API to pick the tool and args to call`
+        this.description = `使用 OpenAI Assistant API 挑选要调用的工具和参数的智能体`
         this.baseClasses = [this.type]
         this.inputs = [
             {
-                label: 'Select Assistant',
+                label: '选择助手',
                 name: 'selectedAssistant',
                 type: 'asyncOptions',
                 loadMethod: 'listAssistants'
             },
             {
-                label: 'Allowed Tools',
+                label: '允许的工具',
                 name: 'tools',
                 type: 'Tool',
                 list: true
             },
             {
-                label: 'Input Moderation',
-                description: 'Detect text that could generate harmful output and prevent it from being sent to the language model',
+                label: '输入调节',
+                description: '检测可能生成有害输出的文本并阻止其发送到语言模型',
                 name: 'inputModeration',
                 type: 'Moderation',
                 optional: true,
                 list: true
             },
             {
-                label: 'Disable File Download',
+                label: '禁用文件下载',
                 name: 'disableFileDownload',
                 type: 'boolean',
                 description:
-                    'Messages can contain text, images, or files. In some cases, you may want to prevent others from downloading the files. Learn more from OpenAI File Annotation <a target="_blank" href="https://platform.openai.com/docs/assistants/how-it-works/managing-threads-and-messages">docs</a>',
+                    '信息可以包含文本、图像或文件。在某些情况下，您可能希望阻止他人下载文件。从 OpenAI 文件说明 <a target="_blank" href="https://platform.openai.com/docs/assistants/how-it-works/managing-threads-and-messages">文档</a>了解更多信息',
                 optional: true,
                 additionalParams: true
             }

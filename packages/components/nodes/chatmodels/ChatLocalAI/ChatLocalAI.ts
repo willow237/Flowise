@@ -17,16 +17,16 @@ class ChatLocalAI_ChatModels implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'ChatLocalAI'
+        this.label = '聊天本地化AI'
         this.name = 'chatLocalAI'
         this.version = 2.0
         this.type = 'ChatLocalAI'
         this.icon = 'localai.png'
-        this.category = 'Chat Models'
-        this.description = 'Use local LLMs like llama.cpp, gpt4all using LocalAI'
+        this.category = '聊天模型'
+        this.description = '使用本地 LLM，如 llama.cpp、使用 LocalAI 的 gpt4all'
         this.baseClasses = [this.type, 'BaseChatModel', ...getBaseClasses(ChatOpenAI)]
         this.credential = {
-            label: 'Connect Credential',
+            label: '连接凭据',
             name: 'credential',
             type: 'credential',
             credentialNames: ['localAIApi'],
@@ -34,7 +34,7 @@ class ChatLocalAI_ChatModels implements INode {
         }
         this.inputs = [
             {
-                label: 'Cache',
+                label: '缓存',
                 name: 'cache',
                 type: 'BaseCache',
                 optional: true
@@ -46,13 +46,13 @@ class ChatLocalAI_ChatModels implements INode {
                 placeholder: 'http://localhost:8080/v1'
             },
             {
-                label: 'Model Name',
+                label: '模型名称',
                 name: 'modelName',
                 type: 'string',
                 placeholder: 'gpt4all-lora-quantized.bin'
             },
             {
-                label: 'Temperature',
+                label: '温度',
                 name: 'temperature',
                 type: 'number',
                 step: 0.1,
@@ -60,7 +60,7 @@ class ChatLocalAI_ChatModels implements INode {
                 optional: true
             },
             {
-                label: 'Max Tokens',
+                label: '最大令牌数',
                 name: 'maxTokens',
                 type: 'number',
                 step: 1,
@@ -68,7 +68,7 @@ class ChatLocalAI_ChatModels implements INode {
                 additionalParams: true
             },
             {
-                label: 'Top Probability',
+                label: '最高概率',
                 name: 'topP',
                 type: 'number',
                 step: 0.1,
@@ -76,7 +76,7 @@ class ChatLocalAI_ChatModels implements INode {
                 additionalParams: true
             },
             {
-                label: 'Timeout',
+                label: '超时',
                 name: 'timeout',
                 type: 'number',
                 step: 1,

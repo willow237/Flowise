@@ -22,7 +22,7 @@ class Text_DocumentLoaders implements INode {
         this.version = 3.0
         this.type = 'Document'
         this.icon = 'Txt.svg'
-        this.category = 'Document Loaders'
+        this.category = '文档加载器'
         this.description = `Load data from text files`
         this.baseClasses = [this.type]
         this.inputs = [

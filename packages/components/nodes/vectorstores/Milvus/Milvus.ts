@@ -30,12 +30,12 @@ class Milvus_VectorStores implements INode {
         this.version = 1.0
         this.type = 'Milvus'
         this.icon = 'milvus.svg'
-        this.category = 'Vector Stores'
-        this.description = `Upsert embedded data and perform similarity search upon query using Milvus, world's most advanced open-source vector database`
+        this.category = '向量存储器'
+        this.description = `使用世界上最先进的开源矢量数据库 Milvus 上载嵌入式数据，并在查询时执行相似性搜索`
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.badge = 'NEW'
         this.credential = {
-            label: 'Connect Credential',
+            label: '连接凭据',
             name: 'credential',
             type: 'credential',
             optional: true,
@@ -43,30 +43,30 @@ class Milvus_VectorStores implements INode {
         }
         this.inputs = [
             {
-                label: 'Document',
+                label: '文档',
                 name: 'document',
                 type: 'Document',
                 list: true,
                 optional: true
             },
             {
-                label: 'Embeddings',
+                label: '嵌入',
                 name: 'embeddings',
                 type: 'Embeddings'
             },
             {
-                label: 'Milvus Server URL',
+                label: 'Milvus 服务器 URL',
                 name: 'milvusServerUrl',
                 type: 'string',
                 placeholder: 'http://localhost:19530'
             },
             {
-                label: 'Milvus Collection Name',
+                label: 'Milvus 集合名称',
                 name: 'milvusCollection',
                 type: 'string'
             },
             {
-                label: 'Milvus Text Field',
+                label: 'Milvus 文本字段',
                 name: 'milvusTextField',
                 type: 'string',
                 placeholder: 'langchain_text',
@@ -74,12 +74,12 @@ class Milvus_VectorStores implements INode {
                 additionalParams: true
             },
             {
-                label: 'Milvus Filter',
+                label: 'Milvus 过滤器',
                 name: 'milvusFilter',
                 type: 'string',
                 optional: true,
                 description:
-                    'Filter data with a simple string query. Refer Milvus <a target="_blank" href="https://milvus.io/blog/2022-08-08-How-to-use-string-data-to-empower-your-similarity-search-applications.md#Hybrid-search">docs</a> for more details.',
+                    '使用简单的字符串查询过滤数据。参考Milvus <a target="_blank" href="https://milvus.io/blog/2022-08-08-How-to-use-string-data-to-empower-your-similarity-search-applications.md#Hybrid-search">文档</a> 了解更多详细信息。',
                 placeholder: 'doc=="a"',
                 additionalParams: true
             },
@@ -95,12 +95,12 @@ class Milvus_VectorStores implements INode {
         ]
         this.outputs = [
             {
-                label: 'Milvus Retriever',
+                label: 'Milvus 检索器',
                 name: 'retriever',
                 baseClasses: this.baseClasses
             },
             {
-                label: 'Milvus Vector Store',
+                label: 'Milvus 向量存储器',
                 name: 'vectorStore',
                 baseClasses: [this.type, ...getBaseClasses(Milvus)]
             }

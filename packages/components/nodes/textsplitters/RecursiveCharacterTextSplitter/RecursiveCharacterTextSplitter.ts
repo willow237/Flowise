@@ -14,37 +14,37 @@ class RecursiveCharacterTextSplitter_TextSplitters implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Recursive Character Text Splitter'
+        this.label = '递归字符文本分割器'
         this.name = 'recursiveCharacterTextSplitter'
         this.version = 2.0
         this.type = 'RecursiveCharacterTextSplitter'
         this.icon = 'textsplitter.svg'
-        this.category = 'Text Splitters'
-        this.description = `Split documents recursively by different characters - starting with "\\n\\n", then "\\n", then " "`
+        this.category = '文本分割器'
+        this.description = `按不同字符递归分割文档--从“\\n\n ”开始，然后是“\\n”，然后是“ ”`
         this.baseClasses = [this.type, ...getBaseClasses(RecursiveCharacterTextSplitter)]
         this.inputs = [
             {
-                label: 'Chunk Size',
+                label: '块大小',
                 name: 'chunkSize',
                 type: 'number',
-                description: 'Number of characters in each chunk. Default is 1000.',
+                description: '每个分块中的字符数。默认为 1000。',
                 default: 1000,
                 optional: true
             },
             {
-                label: 'Chunk Overlap',
+                label: '块重叠',
                 name: 'chunkOverlap',
                 type: 'number',
-                description: 'Number of characters to overlap between chunks. Default is 200.',
+                description: '分块之间重叠的字符数。默认为 200。',
                 default: 200,
                 optional: true
             },
             {
-                label: 'Custom Separators',
+                label: '自定义分隔符',
                 name: 'separators',
                 type: 'string',
                 rows: 4,
-                description: 'Array of custom separators to determine when to split the text, will override the default separators',
+                description: '自定义分隔符数组，用于确定何时分割文本，将覆盖默认分隔符',
                 placeholder: `["|", "##", ">", "-"]`,
                 additionalParams: true,
                 optional: true

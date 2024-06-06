@@ -24,22 +24,22 @@ class SqlDatabaseChain_Chains implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Sql Database Chain'
+        this.label = 'Sql 数据库对话链'
         this.name = 'sqlDatabaseChain'
         this.version = 5.0
         this.type = 'SqlDatabaseChain'
         this.icon = 'sqlchain.svg'
-        this.category = 'Chains'
-        this.description = 'Answer questions over a SQL database'
+        this.category = '对话链'
+        this.description = '通过 SQL 数据库回答问题'
         this.baseClasses = [this.type, ...getBaseClasses(SqlDatabaseChain)]
         this.inputs = [
             {
-                label: 'Language Model',
+                label: '语言模型',
                 name: 'model',
                 type: 'BaseLanguageModel'
             },
             {
-                label: 'Database',
+                label: '数据库',
                 name: 'database',
                 type: 'options',
                 options: [
@@ -63,34 +63,34 @@ class SqlDatabaseChain_Chains implements INode {
                 default: 'sqlite'
             },
             {
-                label: 'Connection string or file path (sqlite only)',
+                label: '连接字符串或文件路径（仅限 sqlite）',
                 name: 'url',
                 type: 'string',
                 placeholder: '1270.0.0.1:5432/chinook'
             },
             {
-                label: 'Include Tables',
+                label: '包含的表',
                 name: 'includesTables',
                 type: 'string',
-                description: 'Tables to include for queries, separated by comma. Can only use Include Tables or Ignore Tables',
+                description: '查询要包含的表，以逗号分隔。只能使用包含表或忽略表',
                 placeholder: 'table1, table2',
                 additionalParams: true,
                 optional: true
             },
             {
-                label: 'Ignore Tables',
+                label: '忽略的表',
                 name: 'ignoreTables',
                 type: 'string',
-                description: 'Tables to ignore for queries, separated by comma. Can only use Ignore Tables or Include Tables',
+                description: '查询时要忽略的表，用逗号分隔。只能使用忽略表或包含表',
                 placeholder: 'table1, table2',
                 additionalParams: true,
                 optional: true
             },
             {
-                label: "Sample table's rows info",
+                label: '示例表的行信息',
                 name: 'sampleRowsInTableInfo',
                 type: 'number',
-                description: 'Number of sample row for tables to load for info.',
+                description: '表中要加载的信息样本行数。',
                 placeholder: '3',
                 additionalParams: true,
                 optional: true
@@ -100,27 +100,26 @@ class SqlDatabaseChain_Chains implements INode {
                 name: 'topK',
                 type: 'number',
                 description:
-                    'If you are querying for several rows of a table you can select the maximum number of results you want to get by using the "top_k" parameter (default is 10). This is useful for avoiding query results that exceed the prompt max length or consume tokens unnecessarily.',
+                    '如果你要查询表中的多行数据，可以使用“top_k”参数（默认值为10）来选择要获取的最大结果数。这很有用，可以避免查询结果超过提示的最大长度或不必要地消耗令牌。',
                 placeholder: '10',
                 additionalParams: true,
                 optional: true
             },
             {
-                label: 'Custom Prompt',
+                label: '自定义 Prompt',
                 name: 'customPrompt',
                 type: 'string',
                 description:
-                    'You can provide custom prompt to the chain. This will override the existing default prompt used. See <a target="_blank" href="https://python.langchain.com/docs/integrations/tools/sqlite#customize-prompt">guide</a>',
-                warning:
-                    'Prompt must include 3 input variables: {input}, {dialect}, {table_info}. You can refer to official guide from description above',
+                    '你可以为链提供自定义提示。这将覆盖现有的默认提示。参见<a target="_blank" href="https://python.langchain.com/docs/integrations/tools/sqlite#customize-prompt">指南</a>',
+                warning: '提示必须包含 3 个输入变量： {input}、{dialect}、{table_info}。您可以参考上述说明中的官方指南',
                 rows: 4,
                 placeholder: DEFAULT_SQL_DATABASE_PROMPT.template + DEFAULT_SQL_DATABASE_PROMPT.templateFormat,
                 additionalParams: true,
                 optional: true
             },
             {
-                label: 'Input Moderation',
-                description: 'Detect text that could generate harmful output and prevent it from being sent to the language model',
+                label: '输入调节',
+                description: '检测可能产生有害输出的文本，防止将其发送给语言模型',
                 name: 'inputModeration',
                 type: 'Moderation',
                 optional: true,

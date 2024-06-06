@@ -25,7 +25,7 @@ class ChatflowTool_Tools implements INode {
         this.version = 1.0
         this.type = 'ChatflowTool'
         this.icon = 'chatflowTool.svg'
-        this.category = 'Tools'
+        this.category = '工具'
         this.description = 'Use as a tool to execute another chatflow'
         this.baseClasses = [this.type, 'Tool']
         this.credential = {

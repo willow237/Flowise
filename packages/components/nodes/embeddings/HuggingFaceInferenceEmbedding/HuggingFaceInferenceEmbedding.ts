@@ -20,7 +20,7 @@ class HuggingFaceInferenceEmbedding_Embeddings implements INode {
         this.version = 1.0
         this.type = 'HuggingFaceInferenceEmbeddings'
         this.icon = 'HuggingFace.svg'
-        this.category = 'Embeddings'
+        this.category = '嵌入'
         this.description = 'HuggingFace Inference API to generate embeddings for a given text'
         this.baseClasses = [this.type, ...getBaseClasses(HuggingFaceInferenceEmbeddings)]
         this.credential = {

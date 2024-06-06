@@ -25,7 +25,7 @@ class CohereRerankRetriever_Retrievers implements INode {
         this.version = 1.0
         this.type = 'Cohere Rerank Retriever'
         this.icon = 'Cohere.svg'
-        this.category = 'Retrievers'
+        this.category = '检索器'
         this.badge = 'NEW'
         this.description = 'Cohere Rerank indexes the documents from most to least semantically relevant to the query.'
         this.baseClasses = [this.type, 'BaseRetriever']

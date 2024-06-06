@@ -18,7 +18,7 @@ class GetVariable_Utilities implements INode {
         this.version = 1.0
         this.type = 'GetVariable'
         this.icon = 'getvar.svg'
-        this.category = 'Utilities'
+        this.category = '实用工具'
         this.description = `Get variable that was saved using Set Variable node`
         this.baseClasses = [this.type, 'Utilities']
         this.inputs = [

@@ -22,7 +22,7 @@ class ChatOpenAICustom_ChatModels implements INode {
         this.version = 3.0
         this.type = 'ChatOpenAI-Custom'
         this.icon = 'openai.svg'
-        this.category = 'Chat Models'
+        this.category = '聊天模型'
         this.description = 'Custom/FineTuned model using OpenAI Chat compatible API'
         this.baseClasses = [this.type, ...getBaseClasses(ChatOpenAI)]
         this.credential = {

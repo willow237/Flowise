@@ -29,7 +29,7 @@ class Supabase_VectorStores implements INode {
         this.version = 4.0
         this.type = 'Supabase'
         this.icon = 'supabase.svg'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.description = 'Upsert embedded data and perform similarity or mmr search upon query using Supabase via pgvector extension'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']
         this.badge = 'NEW'

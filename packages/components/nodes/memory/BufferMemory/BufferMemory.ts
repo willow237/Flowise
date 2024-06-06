@@ -25,12 +25,12 @@ class BufferMemory_Memory implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'Buffer Memory'
+        this.label = '缓冲存储器'
         this.name = 'bufferMemory'
         this.version = 2.0
         this.type = 'BufferMemory'
         this.icon = 'memory.svg'
-        this.category = 'Memory'
+        this.category = '记忆存储'
         this.description = 'Retrieve chat messages stored in database'
         this.baseClasses = [this.type, ...getBaseClasses(BufferMemory)]
         this.inputs = [
@@ -39,13 +39,13 @@ class BufferMemory_Memory implements INode {
                 name: 'sessionId',
                 type: 'string',
                 description:
-                    'If not specified, a random id will be used. Learn <a target="_blank" href="https://docs.flowiseai.com/memory#ui-and-embedded-chat">more</a>',
+                    '如果未指定，将使用随机 ID。了解 <a target="_blank" href="https://docs.flowiseai.com/memory#ui-and-embedded-chat">更多</a>',
                 default: '',
                 additionalParams: true,
                 optional: true
             },
             {
-                label: 'Memory Key',
+                label: '记忆存储键',
                 name: 'memoryKey',
                 type: 'string',
                 default: 'chat_history',

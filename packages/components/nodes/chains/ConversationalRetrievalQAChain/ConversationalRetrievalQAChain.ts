@@ -46,63 +46,63 @@ class ConversationalRetrievalQAChain_Chains implements INode {
     sessionId?: string
 
     constructor(fields?: { sessionId?: string }) {
-        this.label = 'Conversational Retrieval QA Chain'
+        this.label = '对话检索 QA 链'
         this.name = 'conversationalRetrievalQAChain'
         this.version = 3.0
         this.type = 'ConversationalRetrievalQAChain'
         this.icon = 'qa.svg'
-        this.category = 'Chains'
-        this.description = 'Document QA - built on RetrievalQAChain to provide a chat history component'
+        this.category = '对话链'
+        this.description = '文档 QA - 基于 RetrievalQAChain 构建，提供聊天历史组件'
         this.baseClasses = [this.type, ...getBaseClasses(ConversationalRetrievalQAChain)]
         this.inputs = [
             {
-                label: 'Chat Model',
+                label: '聊天模型',
                 name: 'model',
                 type: 'BaseChatModel'
             },
             {
-                label: 'Vector Store Retriever',
+                label: '向量存储检索器',
                 name: 'vectorStoreRetriever',
                 type: 'BaseRetriever'
             },
             {
-                label: 'Memory',
+                label: '记忆存储',
                 name: 'memory',
                 type: 'BaseMemory',
                 optional: true,
-                description: 'If left empty, a default BufferMemory will be used'
+                description: '如果为空，将使用一个默认的BufferMemory'
             },
             {
-                label: 'Return Source Documents',
+                label: '返回源文档',
                 name: 'returnSourceDocuments',
                 type: 'boolean',
                 optional: true
             },
             {
-                label: 'Rephrase Prompt',
+                label: '重写 Prompt',
                 name: 'rephrasePrompt',
                 type: 'string',
-                description: 'Using previous chat history, rephrase question into a standalone question',
-                warning: 'Prompt must include input variables: {chat_history} and {question}',
+                description: '利用以前的聊天记录，将问题改写为独立问题',
+                warning: 'Prompt 必须包含输入变量：{chat_history} and {question}',
                 rows: 4,
                 additionalParams: true,
                 optional: true,
                 default: REPHRASE_TEMPLATE
             },
             {
-                label: 'Response Prompt',
+                label: '响应 Prompt',
                 name: 'responsePrompt',
                 type: 'string',
-                description: 'Taking the rephrased question, search for answer from the provided context',
-                warning: 'Prompt must include input variable: {context}',
+                description: '根据重新表述的问题，从提供的上下文中寻找答案',
+                warning: 'Prompt 必须包含输入变量：{context}',
                 rows: 4,
                 additionalParams: true,
                 optional: true,
                 default: RESPONSE_TEMPLATE
             },
             {
-                label: 'Input Moderation',
-                description: 'Detect text that could generate harmful output and prevent it from being sent to the language model',
+                label: '输入调节',
+                description: '检测可能产生有害输出的文本，防止将其发送给语言模型',
                 name: 'inputModeration',
                 type: 'Moderation',
                 optional: true,

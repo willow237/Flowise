@@ -21,7 +21,7 @@ class CohereEmbedding_Embeddings implements INode {
         this.version = 3.0
         this.type = 'CohereEmbeddings'
         this.icon = 'Cohere.svg'
-        this.category = 'Embeddings'
+        this.category = '嵌入'
         this.description = 'Cohere API to generate embeddings for a given text'
         this.baseClasses = [this.type, ...getBaseClasses(CohereEmbeddings)]
         this.credential = {

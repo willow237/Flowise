@@ -27,34 +27,34 @@ class OpenAIFunctionAgent_Agents implements INode {
     sessionId?: string
 
     constructor(fields?: { sessionId?: string }) {
-        this.label = 'OpenAI Function Agent'
+        this.label = 'OpenAI 函数智能体'
         this.name = 'openAIFunctionAgent'
         this.version = 4.0
         this.type = 'AgentExecutor'
-        this.category = 'Agents'
+        this.category = '智能体'
         this.icon = 'function.svg'
-        this.description = `An agent that uses OpenAI Function Calling to pick the tool and args to call`
+        this.description = `使用 OpenAI 函数调用来选择要调用的工具和参数的智能体`
         this.baseClasses = [this.type, ...getBaseClasses(AgentExecutor)]
         this.badge = 'DEPRECATING'
         this.inputs = [
             {
-                label: 'Allowed Tools',
+                label: '允许的工具',
                 name: 'tools',
                 type: 'Tool',
                 list: true
             },
             {
-                label: 'Memory',
+                label: '记忆存储',
                 name: 'memory',
                 type: 'BaseChatMemory'
             },
             {
-                label: 'OpenAI/Azure Chat Model',
+                label: 'OpenAI/Azure 聊天模型',
                 name: 'model',
                 type: 'BaseChatModel'
             },
             {
-                label: 'System Message',
+                label: '系统信息',
                 name: 'systemMessage',
                 type: 'string',
                 rows: 4,
@@ -62,15 +62,15 @@ class OpenAIFunctionAgent_Agents implements INode {
                 additionalParams: true
             },
             {
-                label: 'Input Moderation',
-                description: 'Detect text that could generate harmful output and prevent it from being sent to the language model',
+                label: '输入调节',
+                description: '检测可能生成有害输出的文本并阻止其发送到语言模型',
                 name: 'inputModeration',
                 type: 'Moderation',
                 optional: true,
                 list: true
             },
             {
-                label: 'Max Iterations',
+                label: '最大迭代次数',
                 name: 'maxIterations',
                 type: 'number',
                 optional: true,

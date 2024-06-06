@@ -22,7 +22,7 @@ class PostgresRecordManager_RecordManager implements INode {
         this.version = 1.0
         this.type = 'Postgres RecordManager'
         this.icon = 'postgres.svg'
-        this.category = 'Record Manager'
+        this.category = '记录管理器'
         this.description = 'Use Postgres to keep track of document writes into the vector databases'
         this.baseClasses = [this.type, 'RecordManager', ...getBaseClasses(PostgresRecordManager)]
         this.badge = 'NEW'

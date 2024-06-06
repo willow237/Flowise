@@ -22,7 +22,7 @@ class OpenAIEmbedding_LlamaIndex_Embeddings implements INode {
         this.version = 2.0
         this.type = 'OpenAIEmbedding'
         this.icon = 'openai.svg'
-        this.category = 'Embeddings'
+        this.category = '嵌入'
         this.description = 'OpenAI Embedding specific for LlamaIndex'
         this.baseClasses = [this.type, 'BaseEmbedding_LlamaIndex', ...getBaseClasses(OpenAIEmbedding)]
         this.tags = ['LlamaIndex']

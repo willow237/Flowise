@@ -28,7 +28,7 @@ class Weaviate_VectorStores implements INode {
         this.version = 3.0
         this.type = 'Weaviate'
         this.icon = 'weaviate.png'
-        this.category = 'Vector Stores'
+        this.category = '向量存储器'
         this.description =
             'Upsert embedded data and perform similarity or mmr search using Weaviate, a scalable open-source vector database'
         this.baseClasses = [this.type, 'VectorStoreRetriever', 'BaseRetriever']

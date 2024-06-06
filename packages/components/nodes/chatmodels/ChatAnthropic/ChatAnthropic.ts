@@ -24,7 +24,7 @@ class ChatAnthropic_ChatModels implements INode {
         this.version = 6.0
         this.type = 'ChatAnthropic'
         this.icon = 'Anthropic.svg'
-        this.category = 'Chat Models'
+        this.category = '聊天模型'
         this.description = 'Wrapper around ChatAnthropic large language models that use the Chat endpoint'
         this.baseClasses = [this.type, ...getBaseClasses(LangchainChatAnthropic)]
         this.credential = {
